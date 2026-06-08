@@ -33,9 +33,15 @@ function normalizeLoanId(raw) {
 }
 
 // Derive the most advanced status from Arive's milestone date fields
+// Case-insensitive and space-insensitive matching
 function deriveStatus(body) {
+  const normalized = {};
+  for (const k of Object.keys(body)) {
+    normalized[k.toLowerCase().replace(/[\s_\-]+/g, '')] = body[k];
+  }
   for (const { field, status } of MILESTONE_MAP) {
-    const val = body[field];
+    const key = field.toLowerCase().replace(/[\s_\-]+/g, '');
+    const val = normalized[key];
     if (val && val.toString().trim() !== '') return status;
   }
   return null;
@@ -132,12 +138,9 @@ async function deleteLoanAndConditions(page, loanId) {
 }
 
 module.exports = async (req, res) => {
-  // Parse query string manually (req.query not always available outside Express)
-  const rawUrl   = req.url ?? '';
-  const qp       = Object.fromEntries(new URLSearchParams(rawUrl.split('?')[1] ?? ''));
   const incomingKey = req.headers['x-zapier-key']
     ?? req.headers['authorization']
-    ?? qp.key;
+    ?? (req.body ?? {}).key;
   if (!incomingKey || incomingKey !== HEADER_KEY) {
     log('unknown', 'AUTH', 'rejected — bad header key');
     return res.status(401).json({ error: 'Unauthorized' });
