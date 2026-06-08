@@ -27,13 +27,18 @@ function saveState(state) {
 }
 
 function extractBody(payload) {
-  const parts = payload.parts ?? [payload];
-  for (const part of parts) {
+  // Recursively search all parts for text/plain content
+  function search(part) {
     if (part.mimeType === 'text/plain' && part.body?.data) {
       return Buffer.from(part.body.data, 'base64').toString('utf8');
     }
+    for (const child of part.parts ?? []) {
+      const result = search(child);
+      if (result) return result;
+    }
+    return null;
   }
-  return '';
+  return search(payload) ?? '';
 }
 
 function getHeader(headers, name) {
@@ -41,11 +46,30 @@ function getHeader(headers, name) {
 }
 
 function hasPdf(payload) {
-  const parts = payload.parts ?? [];
-  return parts.some(p =>
-    p.mimeType === 'application/pdf' ||
-    (p.filename ?? '').toLowerCase().endsWith('.pdf')
-  );
+  // Recursively search all parts for a PDF attachment
+  function search(part) {
+    if (
+      part.mimeType === 'application/pdf' ||
+      (part.filename ?? '').toLowerCase().endsWith('.pdf')
+    ) return true;
+    return (part.parts ?? []).some(search);
+  }
+  return search(payload);
+}
+
+function findPdfPart(payload) {
+  function search(part) {
+    if (
+      part.mimeType === 'application/pdf' ||
+      (part.filename ?? '').toLowerCase().endsWith('.pdf')
+    ) return part;
+    for (const child of part.parts ?? []) {
+      const found = search(child);
+      if (found) return found;
+    }
+    return null;
+  }
+  return search(payload);
 }
 
 async function getAttachmentData(gmail, msgId, attachmentId) {
@@ -77,9 +101,7 @@ async function processMessage(gmail, inboxLabel, msg) {
     const conditionParser = require('../lib/condition-parser');
     let pdfBuffer = null;
     if (hasPDF) {
-      const pdfPart = (payload.parts ?? []).find(p =>
-        p.mimeType === 'application/pdf' || (p.filename ?? '').endsWith('.pdf')
-      );
+      const pdfPart = findPdfPart(payload);
       if (pdfPart?.body?.attachmentId) {
         pdfBuffer = await getAttachmentData(gmail, msg.id, pdfPart.body.attachmentId);
       }

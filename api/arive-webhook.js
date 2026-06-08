@@ -150,8 +150,10 @@ async function deleteLoanAndConditions(page, loanId) {
 }
 
 module.exports = async (req, res) => {
-  // Auth temporarily open while debugging Zapier data flow
-  // TODO: re-enable once confirmed working
+  const receivedKey = req.headers['x-webhook-key'] ?? req.body?.key ?? '';
+  if (HEADER_KEY && receivedKey !== HEADER_KEY) {
+    return res.status(403).json({ error: 'Forbidden' });
+  }
 
   const body         = req.body ?? {};
   const loanId       = extractLoanId(body);
