@@ -1,0 +1,23 @@
+{
+  "name": "mortgage-bot",
+  "version": "1.0.0",
+  "description": "Mortgage automation bot - monitors Gmail, syncs Notion, receives Arive webhooks",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.102.0",
+    "@notionhq/client": "^5.22.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "googleapis": "^173.0.0",
+    "pdf-parse": "^2.4.5",
+    "playwright": "^1.60.0"
+  }
+}
