@@ -5,8 +5,10 @@ const { getClients }  = require('../lib/gmail-client');
 const { classify, isUwmLoanSubject } = require('../lib/email-classifier');
 
 const DRY_RUN = process.env.DRY_RUN === 'true';
-const MAX_MESSAGES_PER_INBOX = 3;
+const MAX_MESSAGES_PER_INBOX = 5;
 const SCAN_TIMEZONE = process.env.GMAIL_SCAN_TIMEZONE || 'America/New_York';
+const PROCESSED_LABEL = process.env.GMAIL_PROCESSED_LABEL || 'mortgage-bot-processed';
+const labelIdCache = {};
 
 // Vercel serverless: only /tmp is writable; fall back to local path for dev
 const STATE_FILE = process.env.VERCEL
@@ -65,7 +67,38 @@ function ensureScanCutoff(state) {
 }
 
 function buildInboxQuery(cutoffMs) {
-  return `in:inbox after:${formatGmailAfterDate(cutoffMs)}`;
+  return `in:inbox after:${formatGmailAfterDate(cutoffMs)} -label:${PROCESSED_LABEL}`;
+}
+
+async function getProcessedLabelId(gmail, inboxLabel) {
+  if (labelIdCache[inboxLabel]) return labelIdCache[inboxLabel];
+
+  const { data } = await gmail.users.labels.list({ userId: 'me' });
+  const existing = (data.labels ?? []).find(l => l.name === PROCESSED_LABEL);
+  if (existing) {
+    labelIdCache[inboxLabel] = existing.id;
+    return existing.id;
+  }
+
+  const created = await gmail.users.labels.create({
+    userId: 'me',
+    requestBody: {
+      name: PROCESSED_LABEL,
+      labelListVisibility: 'labelHide',
+      messageListVisibility: 'show'
+    }
+  });
+  labelIdCache[inboxLabel] = created.data.id;
+  return created.data.id;
+}
+
+async function markMessageProcessed(gmail, inboxLabel, msgId) {
+  const labelId = await getProcessedLabelId(gmail, inboxLabel);
+  await gmail.users.messages.modify({
+    userId: 'me',
+    id: msgId,
+    requestBody: { addLabelIds: [labelId] }
+  });
 }
 
 function extractPart(payload, mimeType) {
@@ -203,13 +236,10 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats) {
 
 async function watchInbox(account, state, cutoffMs, stats) {
   const { label, gmail } = account;
-  if (!state.processed) state.processed = {};
-  if (!state.processed[label]) state.processed[label] = [];
-  const processedSet = new Set(state.processed[label]);
 
   const listRes = await gmail.users.messages.list({
     userId:   'me',
-    maxResults: 10,
+    maxResults: 15,
     q: buildInboxQuery(cutoffMs)
   });
 
@@ -219,15 +249,13 @@ async function watchInbox(account, state, cutoffMs, stats) {
     return state;
   }
 
-  const newMessages = messages.filter(m => !processedSet.has(m.id));
-  const toProcess = newMessages.reverse().slice(0, MAX_MESSAGES_PER_INBOX);
+  const toProcess = messages.reverse().slice(0, MAX_MESSAGES_PER_INBOX);
 
   for (const msg of toProcess) {
     const result = await processMessage(gmail, label, msg, cutoffMs, stats);
-    // Only mark done if handled; skipped-cutoff emails retry on next scan
+    // Gmail label persists across Vercel restarts; skipped-cutoff emails retry next scan
     if (result && result !== 'skipped-cutoff') {
-      state.processed[label].push(msg.id);
-      saveState(state);
+      await markMessageProcessed(gmail, label, msg.id);
     }
   }
 
@@ -239,9 +267,9 @@ module.exports = async (req, res) => {
   let state = loadState();
 
   if (req.query?.reset === 'true') {
-    state = { processed: {} };
+    state = {};
     saveState(state);
-    log('system', null, null, 'state-reset');
+    log('system', null, null, 'state-reset-local-only');
   }
 
   state = ensureScanCutoff(state);
