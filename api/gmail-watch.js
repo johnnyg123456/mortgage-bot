@@ -208,7 +208,10 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats) {
         pdfBuffer = await getAttachmentData(gmail, msg.id, pdfPart.body.attachmentId);
       }
     }
-    await conditionParser.process({ subject, from, body, pdfBuffer, msgId: msg.id });
+    await conditionParser.process({
+      subject, from, body, pdfBuffer, msgId: msg.id,
+      gmail, threadId: full.data.threadId, inboxLabel
+    });
     log(inboxLabel, msg.id, classification, 'dispatched to condition-parser');
     stats.dispatched++;
     return 'dispatched';
