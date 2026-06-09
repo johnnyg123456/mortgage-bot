@@ -315,23 +315,31 @@ async function runScan(req) {
   return payload;
 }
 
-module.exports = async (req, res) => {
-  // cron-job.org times out at 30s; scans can take ~60s. Reply immediately on Vercel
-  // and finish the scan in the background so cron reports success.
-  if (process.env.VERCEL) {
+function scheduleBackgroundScan(req) {
+  const scan = runScan(req).catch(err => {
+    console.error(JSON.stringify({ ts: new Date().toISOString(), action: 'scan-error', error: err.message }));
+  });
+
+  try {
     const { waitUntil } = require('@vercel/functions');
-    waitUntil(
-      runScan(req).catch(err => {
-        console.error(JSON.stringify({ ts: new Date().toISOString(), action: 'scan-error', error: err.message }));
-      })
-    );
-    return res.status(202).json({
-      ok: true,
-      message: 'Scan started — check Vercel logs for results',
-      ts: new Date().toISOString()
-    });
+    waitUntil(scan);
+  } catch {
+    scan.catch(() => {});
+  }
+}
+
+module.exports = async (req, res) => {
+  // cron-job.org times out at 30s; scans can take ~60s. Reply immediately unless
+  // ?wait=true (manual debugging). Add ?wait=true in browser to see full results.
+  if (req.query?.wait === 'true') {
+    const payload = await runScan(req);
+    return res.status(200).json(payload);
   }
 
-  const payload = await runScan(req);
-  return res.status(200).json(payload);
+  scheduleBackgroundScan(req);
+  return res.status(202).json({
+    ok: true,
+    message: 'Scan started — check Vercel logs for results',
+    ts: new Date().toISOString()
+  });
 };

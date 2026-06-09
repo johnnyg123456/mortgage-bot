@@ -68,7 +68,7 @@ async function setupConditionsDb() {
       },
       'Assigned To': sel(['You', 'Christy']),
       'Source':      sel(['Underwriter', 'Realtor', 'Lender']),
-      'Urgent':      { checkbox: {} },
+      'Priority':    sel(['High', 'Medium', 'Low']),
       'Date Added':  { date: {} }
     }
   });
