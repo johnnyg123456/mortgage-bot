@@ -188,7 +188,7 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats) {
     return 'skipped-cutoff';
   }
 
-  const classification = classify(subject, body, { hasPdf: hasPDF });
+  const classification = classify(subject, body, { hasPdf: hasPDF, from });
   log(inboxLabel, msg.id, classification, 'classified');
   stats.messages.push({ inbox: inboxLabel, msgId: msg.id, subject, classification, hasPdf: hasPDF });
 
@@ -227,6 +227,13 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats) {
     const correction = require('../lib/correction-handler');
     await correction.process({ subject, from, body });
     log(inboxLabel, msg.id, classification, 'dispatched to correction-handler');
+    stats.dispatched++;
+    return 'dispatched';
+
+  } else if (classification === 'LENDER_REQUEST') {
+    const lenderRequest = require('../lib/lender-request-handler');
+    await lenderRequest.process({ subject, from, body });
+    log(inboxLabel, msg.id, classification, 'dispatched to lender-request-handler');
     stats.dispatched++;
     return 'dispatched';
 
