@@ -19,7 +19,8 @@ app.get('/health', (req, res) => {
     timestamp: new Date().toISOString(),
     endpoints: [
       'POST /api/arive-webhook',
-      'GET  /api/gmail-watch'
+      'GET  /api/gmail-watch',
+      'GET  /api/clear-ptf'
     ]
   });
 });
@@ -32,6 +33,11 @@ app.post('/api/arive-webhook', (req, res) => {
 
 app.get('/api/gmail-watch', (req, res) => {
   const handler = require('./api/gmail-watch');
+  handler(req, res);
+});
+
+app.get('/api/clear-ptf', (req, res) => {
+  const handler = require('./api/clear-ptf');
   handler(req, res);
 });
 
