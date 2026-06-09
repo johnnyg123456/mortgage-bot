@@ -6,6 +6,7 @@ const { classify }    = require('../lib/email-classifier');
 
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const MAX_MESSAGES_PER_INBOX = 3;
+const SCAN_TIMEZONE = process.env.GMAIL_SCAN_TIMEZONE || 'America/New_York';
 
 // Vercel serverless: only /tmp is writable; fall back to local path for dev
 const STATE_FILE = process.env.VERCEL
@@ -25,6 +26,34 @@ function loadState() {
 
 function saveState(state) {
   fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
+}
+
+function formatGmailAfterDate(epochMs) {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: SCAN_TIMEZONE,
+    year:  'numeric',
+    month: '2-digit',
+    day:   '2-digit'
+  }).formatToParts(new Date(epochMs));
+  const y = parts.find(p => p.type === 'year').value;
+  const m = parts.find(p => p.type === 'month').value;
+  const d = parts.find(p => p.type === 'day').value;
+  return `${y}/${m}/${d}`;
+}
+
+function ensureScanCutoff(state) {
+  if (process.env.GMAIL_SCAN_AFTER) {
+    state.scanCutoffMs = Date.parse(process.env.GMAIL_SCAN_AFTER);
+    return state;
+  }
+  if (!state.scanCutoffMs) {
+    state.scanCutoffMs = Date.now();
+  }
+  return state;
+}
+
+function buildInboxQuery(cutoffMs) {
+  return `in:inbox after:${formatGmailAfterDate(cutoffMs)}`;
 }
 
 function extractBody(payload) {
@@ -80,8 +109,12 @@ async function getAttachmentData(gmail, msgId, attachmentId) {
   return Buffer.from(res.data.data, 'base64');
 }
 
-async function processMessage(gmail, inboxLabel, msg) {
+async function processMessage(gmail, inboxLabel, msg, cutoffMs) {
   const full = await gmail.users.messages.get({ userId: 'me', id: msg.id, format: 'full' });
+  if (Number(full.data.internalDate) < cutoffMs) {
+    log(inboxLabel, msg.id, null, 'skipped-before-cutoff');
+    return;
+  }
   const { payload } = full.data;
   const headers = payload.headers ?? [];
   const subject = getHeader(headers, 'subject');
@@ -125,14 +158,14 @@ async function processMessage(gmail, inboxLabel, msg) {
   }
 }
 
-async function watchInbox(account, state) {
+async function watchInbox(account, state, cutoffMs) {
   const { label, gmail } = account;
   const lastId = state[label] ?? null;
 
   const listRes = await gmail.users.messages.list({
     userId:   'me',
     maxResults: 10,
-    q: lastId ? '' : 'is:unread newer_than:7d'
+    q: buildInboxQuery(cutoffMs)
   });
 
   const messages = listRes.data.messages ?? [];
@@ -147,7 +180,7 @@ async function watchInbox(account, state) {
 
   const toProcess = newMessages.reverse().slice(0, MAX_MESSAGES_PER_INBOX);
   for (const msg of toProcess) {
-    await processMessage(gmail, label, msg);
+    await processMessage(gmail, label, msg, cutoffMs);
     state[label] = msg.id;
     saveState(state);
   }
@@ -158,11 +191,17 @@ async function watchInbox(account, state) {
 module.exports = async (req, res) => {
   const clients = getClients();
   let state = loadState();
+  state = ensureScanCutoff(state);
+  saveState(state);
+
+  const cutoffMs = state.scanCutoffMs;
   const results = {};
+
+  log('system', null, null, `scan-cutoff:${new Date(cutoffMs).toISOString()}`);
 
   for (const [key, account] of Object.entries(clients)) {
     try {
-      state = await watchInbox(account, state);
+      state = await watchInbox(account, state, cutoffMs);
       results[account.label] = 'ok';
     } catch (err) {
       console.error(JSON.stringify({ ts: new Date().toISOString(), inbox: account.label, error: err.message }));
@@ -171,5 +210,11 @@ module.exports = async (req, res) => {
   }
 
   saveState(state);
-  return res.status(200).json({ ok: true, ts: new Date().toISOString(), results });
+  return res.status(200).json({
+    ok: true,
+    ts: new Date().toISOString(),
+    scanCutoff: new Date(cutoffMs).toISOString(),
+    scanQuery: buildInboxQuery(cutoffMs),
+    results
+  });
 };
