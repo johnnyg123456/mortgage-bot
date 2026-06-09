@@ -2,7 +2,7 @@ require('dotenv').config();
 const fs   = require('fs');
 const path = require('path');
 const { getClients }  = require('../lib/gmail-client');
-const { classify }    = require('../lib/email-classifier');
+const { classify, isUwmLoanSubject } = require('../lib/email-classifier');
 
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const MAX_MESSAGES_PER_INBOX = 3;
@@ -56,10 +56,9 @@ function buildInboxQuery(cutoffMs) {
   return `in:inbox after:${formatGmailAfterDate(cutoffMs)}`;
 }
 
-function extractBody(payload) {
-  // Recursively search all parts for text/plain content
+function extractPart(payload, mimeType) {
   function search(part) {
-    if (part.mimeType === 'text/plain' && part.body?.data) {
+    if (part.mimeType === mimeType && part.body?.data) {
       return Buffer.from(part.body.data, 'base64').toString('utf8');
     }
     for (const child of part.parts ?? []) {
@@ -68,7 +67,24 @@ function extractBody(payload) {
     }
     return null;
   }
-  return search(payload) ?? '';
+  return search(payload);
+}
+
+function stripHtml(html) {
+  return html
+    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function extractBody(payload) {
+  const plain = extractPart(payload, 'text/plain');
+  if (plain) return plain;
+  const html = extractPart(payload, 'text/html');
+  if (html) return stripHtml(html);
+  return '';
 }
 
 function getHeader(headers, name) {
@@ -109,25 +125,32 @@ async function getAttachmentData(gmail, msgId, attachmentId) {
   return Buffer.from(res.data.data, 'base64');
 }
 
-async function processMessage(gmail, inboxLabel, msg, cutoffMs) {
+async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats) {
   const full = await gmail.users.messages.get({ userId: 'me', id: msg.id, format: 'full' });
-  if (Number(full.data.internalDate) < cutoffMs) {
-    log(inboxLabel, msg.id, null, 'skipped-before-cutoff');
-    return;
-  }
   const { payload } = full.data;
   const headers = payload.headers ?? [];
   const subject = getHeader(headers, 'subject');
   const from    = getHeader(headers, 'from');
   const body    = extractBody(payload);
   const hasPDF  = hasPdf(payload);
+  const internalDate = Number(full.data.internalDate);
 
-  const classification = classify(subject, body);
+  // PDF approval letters with UWM subject pattern: always process if in today's inbox
+  const bypassCutoff = hasPDF && isUwmLoanSubject(subject);
+  if (internalDate < cutoffMs && !bypassCutoff) {
+    log(inboxLabel, msg.id, null, 'skipped-before-cutoff');
+    stats.skippedCutoff++;
+    return;
+  }
+
+  const classification = classify(subject, body, { hasPdf: hasPDF });
   log(inboxLabel, msg.id, classification, 'classified');
+  stats.messages.push({ inbox: inboxLabel, msgId: msg.id, subject, classification, hasPdf: hasPDF });
 
   // Dry run — log only, no handler dispatch
   if (DRY_RUN) {
     log(inboxLabel, msg.id, classification, 'dry-run-skipped');
+    stats.dryRun++;
     return;
   }
 
@@ -142,23 +165,27 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs) {
     }
     await conditionParser.process({ subject, from, body, pdfBuffer, msgId: msg.id });
     log(inboxLabel, msg.id, classification, 'dispatched to condition-parser');
+    stats.dispatched++;
 
   } else if (classification === 'PRE_APPROVAL') {
     const preApproval = require('../lib/pre-approval-handler');
     await preApproval.process({ subject, from, body });
     log(inboxLabel, msg.id, classification, 'dispatched to pre-approval-handler');
+    stats.dispatched++;
 
   } else if (classification === 'CORRECTION') {
     const correction = require('../lib/correction-handler');
     await correction.process({ subject, from, body });
     log(inboxLabel, msg.id, classification, 'dispatched to correction-handler');
+    stats.dispatched++;
 
   } else {
     log(inboxLabel, msg.id, classification, 'skipped');
+    stats.skippedOther++;
   }
 }
 
-async function watchInbox(account, state, cutoffMs) {
+async function watchInbox(account, state, cutoffMs, stats) {
   const { label, gmail } = account;
   const lastId = state[label] ?? null;
 
@@ -180,7 +207,7 @@ async function watchInbox(account, state, cutoffMs) {
 
   const toProcess = newMessages.reverse().slice(0, MAX_MESSAGES_PER_INBOX);
   for (const msg of toProcess) {
-    await processMessage(gmail, label, msg, cutoffMs);
+    await processMessage(gmail, label, msg, cutoffMs, stats);
     state[label] = msg.id;
     saveState(state);
   }
@@ -196,12 +223,13 @@ module.exports = async (req, res) => {
 
   const cutoffMs = state.scanCutoffMs;
   const results = {};
+  const stats = { messages: [], dispatched: 0, skippedCutoff: 0, skippedOther: 0, dryRun: 0 };
 
   log('system', null, null, `scan-cutoff:${new Date(cutoffMs).toISOString()}`);
 
   for (const [key, account] of Object.entries(clients)) {
     try {
-      state = await watchInbox(account, state, cutoffMs);
+      state = await watchInbox(account, state, cutoffMs, stats);
       results[account.label] = 'ok';
     } catch (err) {
       console.error(JSON.stringify({ ts: new Date().toISOString(), inbox: account.label, error: err.message }));
@@ -215,6 +243,7 @@ module.exports = async (req, res) => {
     ts: new Date().toISOString(),
     scanCutoff: new Date(cutoffMs).toISOString(),
     scanQuery: buildInboxQuery(cutoffMs),
-    results
+    results,
+    stats
   });
 };
