@@ -5,6 +5,7 @@ const { getClients }  = require('../lib/gmail-client');
 const { classify }    = require('../lib/email-classifier');
 
 const DRY_RUN = process.env.DRY_RUN === 'true';
+const MAX_MESSAGES_PER_INBOX = 3;
 
 // Vercel serverless: only /tmp is writable; fall back to local path for dev
 const STATE_FILE = process.env.VERCEL
@@ -130,8 +131,8 @@ async function watchInbox(account, state) {
 
   const listRes = await gmail.users.messages.list({
     userId:   'me',
-    maxResults: 20,
-    q: lastId ? '' : 'is:unread'
+    maxResults: 10,
+    q: lastId ? '' : 'is:unread newer_than:7d'
   });
 
   const messages = listRes.data.messages ?? [];
@@ -144,13 +145,13 @@ async function watchInbox(account, state) {
     ? messages.filter(m => m.id > lastId)
     : messages;
 
-  for (const msg of newMessages.reverse()) {
+  const toProcess = newMessages.reverse().slice(0, MAX_MESSAGES_PER_INBOX);
+  for (const msg of toProcess) {
     await processMessage(gmail, label, msg);
+    state[label] = msg.id;
+    saveState(state);
   }
 
-  if (newMessages.length > 0) {
-    state[label] = messages[0].id;
-  }
   return state;
 }
 
