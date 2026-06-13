@@ -2,6 +2,10 @@ node_modules/
 .env
 .env.local
 .env.production
+.env.render.template
+data/.gmail-state.json
+newrez-full-text.txt
 screenshots/
 *.log
 .vercel/
+.vercel

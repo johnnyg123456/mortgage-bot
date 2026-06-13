@@ -1,0 +1,5 @@
+Newrez sends it's approvals via a link in an email.  There is no security to open the pdf link so you can do that yourself to access the approval pdf.  I uploaded a print of the email along with the approval pdf. 
+
+You need to click on the hyperlink which was found in the below of the approval email. 
+
+Attachment(s): 9758676861_Loan_Approval.pdf

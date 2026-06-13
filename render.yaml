@@ -1,0 +1,50 @@
+# Render Blueprint — Mortgage Notion Bot
+# Dashboard: New > Blueprint > connect repo > use this file
+#
+# After deploy, set secret env vars in Render (Environment tab).
+# Point cron-job.org at: https://YOUR-SERVICE.onrender.com/api/gmail-watch
+
+services:
+  - type: web
+    name: mortgage-notion-bot
+    runtime: node
+    plan: starter
+    region: ohio
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: VALIDATOR_ENABLED
+        value: "true"
+      - key: GMAIL_SCAN_SYNC
+        value: "true"
+      - key: GMAIL_SCAN_TIMEZONE
+        value: America/New_York
+      - key: NOTION_TOKEN
+        sync: false
+      - key: NOTION_LOANS_DB_ID
+        sync: false
+      - key: NOTION_CONDITIONS_DB_ID
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: GMAIL_CLIENT_ID_PRIMARY
+        sync: false
+      - key: GMAIL_CLIENT_SECRET_PRIMARY
+        sync: false
+      - key: GMAIL_REFRESH_TOKEN_PRIMARY
+        sync: false
+      - key: GMAIL_CLIENT_ID_CHRISTY
+        sync: false
+      - key: GMAIL_CLIENT_SECRET_CHRISTY
+        sync: false
+      - key: GMAIL_REFRESH_TOKEN_CHRISTY
+        sync: false
+      - key: JOHN_EMAIL
+        sync: false
+      - key: CHRISTINA_EMAIL
+        sync: false
+      - key: ZAPIER_STATIC_HEADER_KEY
+        sync: false

@@ -2,16 +2,10 @@
   "version": 2,
   "functions": {
     "api/gmail-watch.js": {
-      "maxDuration": 60
+      "maxDuration": 300
     },
     "api/*.js": {
       "maxDuration": 30
     }
-  },
-  "crons": [
-    {
-      "path": "/api/gmail-watch",
-      "schedule": "*/5 * * * *"
-    }
-  ]
+  }
 }

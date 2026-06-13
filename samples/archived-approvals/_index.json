@@ -1,0 +1,1974 @@
+{
+  "saved": {
+    "04696af4fb8f5c4d": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_Acra_-_Approval_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "3521926  5509 NW 5th Ct LLC  Loan Approval Notice",
+      "from": "Carla Boudreau <carla.boudreau@acralending.com>",
+      "inbox": "John",
+      "msgId": "19eb2f6166c1fb21",
+      "savedAt": "2026-06-11T00:10:50.767Z"
+    },
+    "f9071ee74525f270": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_16015_-_16016_Agent_Contact_Information_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "3521926  5509 NW 5th Ct LLC  Loan Approval Notice",
+      "from": "Carla Boudreau <carla.boudreau@acralending.com>",
+      "inbox": "John",
+      "msgId": "19eb2f6166c1fb21",
+      "savedAt": "2026-06-11T00:10:51.206Z"
+    },
+    "596b3d76b30e851b": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_16006_ACH_form_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "3521926  5509 NW 5th Ct LLC  Loan Approval Notice",
+      "from": "Carla Boudreau <carla.boudreau@acralending.com>",
+      "inbox": "John",
+      "msgId": "19eb2f6166c1fb21",
+      "savedAt": "2026-06-11T00:10:51.546Z"
+    },
+    "a4091d817670db66": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_15006_-_ECOA_form_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "3521926  5509 NW 5th Ct LLC  Loan Approval Notice",
+      "from": "Carla Boudreau <carla.boudreau@acralending.com>",
+      "inbox": "John",
+      "msgId": "19eb2f6166c1fb21",
+      "savedAt": "2026-06-11T00:10:51.947Z"
+    },
+    "3a423d86e543de68": {
+      "path": "samples\\archived-approvals\\newrez\\9758676861_9758676861_Loan_Approval_2026-06-11.pdf",
+      "lender": "newrez",
+      "loan": "9758676861",
+      "subject": "The approval for loan # 9758676861 has been updated.",
+      "from": "Newrez <notify@myaccount.newrez.com>",
+      "inbox": "John",
+      "msgId": "19eb1f010d1718f2",
+      "savedAt": "2026-06-11T00:11:01.694Z"
+    },
+    "9aea7c5d9117d950": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Orion_LoanDecision_XXXXXX56374_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Loan #XXXXXX56374, Shabat updated loan approval",
+      "from": "Orion STAR <star@orionlending.com>",
+      "inbox": "John",
+      "msgId": "19eaf67b73cef970",
+      "savedAt": "2026-06-11T00:11:06.706Z"
+    },
+    "1dc4dc12e52915b8": {
+      "path": "samples\\archived-approvals\\newrez\\9758676861_9758676861_Loan_Approval_2026-06-11_1.pdf",
+      "lender": "newrez",
+      "loan": "9758676861",
+      "subject": "The approval for loan # 9758676861 has been updated.",
+      "from": "Newrez <notify@myaccount.newrez.com>",
+      "inbox": "John",
+      "msgId": "19ead7e567429404",
+      "savedAt": "2026-06-11T00:11:18.386Z"
+    },
+    "85dae85fd93f6eda": {
+      "path": "samples\\archived-approvals\\newrez\\9758676861_9758676861_Loan_Approval_2026-06-11_2.pdf",
+      "lender": "newrez",
+      "loan": "9758676861",
+      "subject": "The approval for loan # 9758676861 has been updated.",
+      "from": "Newrez <notify@myaccount.newrez.com>",
+      "inbox": "John",
+      "msgId": "19ead7c20c2d234d",
+      "savedAt": "2026-06-11T00:11:20.643Z"
+    },
+    "40d9bfa519adeb3e": {
+      "path": "samples\\archived-approvals\\acra\\8010187958_Updated_Approval_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": "8010187958",
+      "subject": "Kaniel #8010187958 - Updated Approval  (Condo Review Only)",
+      "from": "Melissa Nunez <mnunez@myndm.com>",
+      "inbox": "John",
+      "msgId": "19ea92fd811523d0",
+      "savedAt": "2026-06-11T00:11:35.718Z"
+    },
+    "8c4e3c5434e51f44": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Approval_jana_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e94260a9425362",
+      "savedAt": "2026-06-11T00:12:22.790Z"
+    },
+    "d10b02c34b8dc9af": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_JG_approval_letter_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Fwd: Approval letter docs",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e8a37d10d900f6",
+      "savedAt": "2026-06-11T00:12:48.956Z"
+    },
+    "c0274b7351183c19": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Free_Ck_0001-STATEMENT-04-30-2026-844d9843-8333-4cc7-b8ba-08f920c4ca6d_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Fwd: Approval letter docs",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e8a37d10d900f6",
+      "savedAt": "2026-06-11T00:12:49.402Z"
+    },
+    "226c556443974f55": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_pnc_april_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Fwd: Approval letter docs",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e8a37d10d900f6",
+      "savedAt": "2026-06-11T00:12:49.777Z"
+    },
+    "b6d476079d029817": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_vanguard_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Fwd: Approval letter docs",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e8a37d10d900f6",
+      "savedAt": "2026-06-11T00:12:50.188Z"
+    },
+    "e4877c7824f92768": {
+      "path": "samples\\archived-approvals\\newrez\\9769720773_9769720773_Loan_Approval_2026-06-11.pdf",
+      "lender": "newrez",
+      "loan": "9769720773",
+      "subject": "The approval for loan # 9769720773 has been updated.",
+      "from": "Newrez <notify@myaccount.newrez.com>",
+      "inbox": "John",
+      "msgId": "19e89c4ead221d3b",
+      "savedAt": "2026-06-11T00:12:54.476Z"
+    },
+    "9140d036ae0e7adc": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_sapir_approval_conv_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Sapir approval letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e6c0fb4002dc3d",
+      "savedAt": "2026-06-11T00:13:59.697Z"
+    },
+    "641d4ed6f6508eab": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_FL_Approval_Letter_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "FL Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e69951b13fe6b2",
+      "savedAt": "2026-06-11T00:14:16.297Z"
+    },
+    "ded3902e36484304": {
+      "path": "samples\\archived-approvals\\acra\\2605061384_Yehuda_Soffer_Conditional_Approval_Letter_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": "2605061384",
+      "subject": "Cake TPO - Soffer - 2605061384 - 4936 Whispering Way - Updated Conditional Approval",
+      "from": "Lorraine Whitaker <Lorraine.Whitaker@cakehome.com>",
+      "inbox": "John",
+      "msgId": "19e5060605248382",
+      "savedAt": "2026-06-11T00:14:49.887Z"
+    },
+    "d4b6061ea0f15a7a": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_CM_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e4b9231ef4bd33",
+      "savedAt": "2026-06-11T00:15:00.151Z"
+    },
+    "ff07e46b75713e11": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Broker_Approval_Letter_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Orion Lending Broker Full Approval",
+      "from": "Orion Broker Desk <brokers@orionlending.com>",
+      "inbox": "John",
+      "msgId": "19e47c10eb048185",
+      "savedAt": "2026-06-11T00:15:08.414Z"
+    },
+    "98a3620de28d5626": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Cosmic_Advantages_Flyer_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Orion Lending Broker Full Approval",
+      "from": "Orion Broker Desk <brokers@orionlending.com>",
+      "inbox": "John",
+      "msgId": "19e47c10eb048185",
+      "savedAt": "2026-06-11T00:15:09.181Z"
+    },
+    "58ef966d72418868": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Why_Truv_QRG_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Orion Lending Broker Full Approval",
+      "from": "Orion Broker Desk <brokers@orionlending.com>",
+      "inbox": "John",
+      "msgId": "19e47c10eb048185",
+      "savedAt": "2026-06-11T00:15:09.721Z"
+    },
+    "4d756744824a0104": {
+      "path": "samples\\archived-approvals\\other\\7517183_PRELIM_SELLER_ALTA_-_7807_Ironhorse_Blvd_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "7517183",
+      "subject": "Fwd: 7517183 - Leclerc Loan Approval Notice",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e4753a3ec6c1b3",
+      "savedAt": "2026-06-11T00:15:10.535Z"
+    },
+    "328cbfac8340a7ed": {
+      "path": "samples\\archived-approvals\\acra\\7517183_Acra_-_Approval_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": "7517183",
+      "subject": "7517183 - Leclerc Loan Approval Notice",
+      "from": "Carla Boudreau <carla.boudreau@acralending.com>",
+      "inbox": "John",
+      "msgId": "19e46d1e26fff3d2",
+      "savedAt": "2026-06-11T00:15:14.729Z"
+    },
+    "9c1d03edd5eb9b5f": {
+      "path": "samples\\archived-approvals\\acra\\7517183_16007_Vesting_form_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": "7517183",
+      "subject": "7517183 - Leclerc Loan Approval Notice",
+      "from": "Carla Boudreau <carla.boudreau@acralending.com>",
+      "inbox": "John",
+      "msgId": "19e46d1e26fff3d2",
+      "savedAt": "2026-06-11T00:15:15.899Z"
+    },
+    "fccf72981cd9da8d": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_sidi_approval_160k_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Sidi Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e41587dd32767d",
+      "savedAt": "2026-06-11T00:15:33.873Z"
+    },
+    "50aa078e8c866d48": {
+      "path": "samples\\archived-approvals\\Resicentral\\5020045383_Atias_ICD_2026-06-11.pdf",
+      "lender": "Resicentral",
+      "loan": "5020045383",
+      "subject": "Atias 5020045383 - Initial CD Approval",
+      "from": "Jennifer Hernandez <jhernandez@resicentral.com>",
+      "inbox": "John",
+      "msgId": "19e3c27e030e943d",
+      "savedAt": "2026-06-11T00:15:49.474Z"
+    },
+    "0a16afb64deddb85": {
+      "path": "samples\\archived-approvals\\acra\\2605061384_Yehuda_Soffer_Conditional_Approval_Letter_2026-06-11_1.pdf",
+      "lender": "acra",
+      "loan": "2605061384",
+      "subject": "Fwd: Cake TPO - Soffer - 2605061384 - 4936 Whispering Way - Updated Conditional Approval",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e2e859eaed6b61",
+      "savedAt": "2026-06-11T00:15:58.461Z"
+    },
+    "94307827db464228": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_CB_Approval_letter_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Chris updated approval letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e2bb7953217b0f",
+      "savedAt": "2026-06-11T00:16:08.531Z"
+    },
+    "f2a5a1644ca07f38": {
+      "path": "samples\\archived-approvals\\newfi\\2026050491_free_and_clear_hawk_2026-06-11.pdf",
+      "lender": "newfi",
+      "loan": "2026050491",
+      "subject": "Re: CC2026050491 - Brandon Margera - Underwriting Approval Certificate",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e27c6179297a65",
+      "savedAt": "2026-06-11T00:16:20.691Z"
+    },
+    "35999b27e6231bc2": {
+      "path": "samples\\archived-approvals\\newfi\\2026050491_trans_history_hawk_2026-06-11.pdf",
+      "lender": "newfi",
+      "loan": "2026050491",
+      "subject": "Re: CC2026050491 - Brandon Margera - Underwriting Approval Certificate",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e27c6179297a65",
+      "savedAt": "2026-06-11T00:16:20.982Z"
+    },
+    "9e6d1d7edf47c6a2": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_AS_Vacation_Rentals_LLC_Initial_Approval_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "AS Vacation Rentals LLC | 3521183 | Acra Initial Approval",
+      "from": "Jill Whipple <Jill.Whipple@acralending.com>",
+      "inbox": "John",
+      "msgId": "19e1dc511ff98699",
+      "savedAt": "2026-06-11T00:16:38.734Z"
+    },
+    "030aa0a31a13bc59": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_Mortgagee_Clauses_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "AS Vacation Rentals LLC | 3521183 | Acra Initial Approval",
+      "from": "Jill Whipple <Jill.Whipple@acralending.com>",
+      "inbox": "John",
+      "msgId": "19e1dc511ff98699",
+      "savedAt": "2026-06-11T00:16:39.060Z"
+    },
+    "b6fbc7b03947f8fc": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_Agent_Contact_Information_3.21.25-1_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "AS Vacation Rentals LLC | 3521183 | Acra Initial Approval",
+      "from": "Jill Whipple <Jill.Whipple@acralending.com>",
+      "inbox": "John",
+      "msgId": "19e1dc511ff98699",
+      "savedAt": "2026-06-11T00:16:39.372Z"
+    },
+    "af724384e4a1231b": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_DataVerify_SSA89_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "AS Vacation Rentals LLC | 3521183 | Acra Initial Approval",
+      "from": "Jill Whipple <Jill.Whipple@acralending.com>",
+      "inbox": "John",
+      "msgId": "19e1dc511ff98699",
+      "savedAt": "2026-06-11T00:16:39.762Z"
+    },
+    "f8aa4bd6e76aaa72": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_2023.08.01_Acra_Borrower_ACH_Form_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "AS Vacation Rentals LLC | 3521183 | Acra Initial Approval",
+      "from": "Jill Whipple <Jill.Whipple@acralending.com>",
+      "inbox": "John",
+      "msgId": "19e1dc511ff98699",
+      "savedAt": "2026-06-11T00:16:40.204Z"
+    },
+    "98a9282e3410f979": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_FL_Approval_Letter_2026-06-11_1.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "FL Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e19580335056b8",
+      "savedAt": "2026-06-11T00:16:49.201Z"
+    },
+    "7b691b73b127bddf": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_NK_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19e0519b842d9bf1",
+      "savedAt": "2026-06-11T00:17:13.020Z"
+    },
+    "19f3d7203d5cf1e5": {
+      "path": "samples\\archived-approvals\\Resicentral\\5020045536_Torchin_ICD_2026-06-11.pdf",
+      "lender": "Resicentral",
+      "loan": "5020045536",
+      "subject": "Re: Torchin 5020045536 - Initial CD Approval",
+      "from": "Ashlee Burdess <aburdess@resicentral.com>",
+      "inbox": "John",
+      "msgId": "19e03871e3a8cec8",
+      "savedAt": "2026-06-11T00:17:21.019Z"
+    },
+    "b6d006aa8fddcfcd": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_davidchase0525_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Mor David pre approval DL and 05/25 statement / more statements to follow",
+      "from": "Yaeli Sisson <ysisson@aol.com>",
+      "inbox": "John",
+      "msgId": "19df845900e17d63",
+      "savedAt": "2026-06-11T00:18:12.887Z"
+    },
+    "eb7737f024af40c6": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Scott_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19de4e25b96482c9",
+      "savedAt": "2026-06-11T00:18:36.696Z"
+    },
+    "ef2ff80cece0dad7": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Margera_Approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19dd9b1318df2a27",
+      "savedAt": "2026-06-11T00:19:00.781Z"
+    },
+    "02a1107e85c77163": {
+      "path": "samples\\archived-approvals\\other\\2603058183_Appraisal_Inv_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "2603058183",
+      "subject": "Re: [EXTERNAL] Cake TPO - Ben Harush - 2603058183 - 11751 Shawnee Road - Updated Conditional Approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19dd94a02fb68203",
+      "savedAt": "2026-06-11T00:19:01.835Z"
+    },
+    "63f1d9726dcfd3cf": {
+      "path": "samples\\archived-approvals\\other\\2603058183_Credit_report_Invoice_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "2603058183",
+      "subject": "Re: [EXTERNAL] Cake TPO - Ben Harush - 2603058183 - 11751 Shawnee Road - Updated Conditional Approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19dd94a02fb68203",
+      "savedAt": "2026-06-11T00:19:02.229Z"
+    },
+    "4544e0607744341b": {
+      "path": "samples\\archived-approvals\\other\\2603058183_HOI_receipt_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "2603058183",
+      "subject": "Re: [EXTERNAL] Cake TPO - Ben Harush - 2603058183 - 11751 Shawnee Road - Updated Conditional Approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19dd94a02fb68203",
+      "savedAt": "2026-06-11T00:19:02.584Z"
+    },
+    "c88cf74aba6b68e9": {
+      "path": "samples\\archived-approvals\\acra\\8010187958_Updated_Approval_2026-06-11_1.pdf",
+      "lender": "acra",
+      "loan": "8010187958",
+      "subject": "Kaniel #8010187958 - Updated Approval  (Condo Review Only)",
+      "from": "Melissa Nunez <mnunez@myndm.com>",
+      "inbox": "John",
+      "msgId": "19dd62c67db74c24",
+      "savedAt": "2026-06-11T00:19:04.083Z"
+    },
+    "649e43b4acbf9b1c": {
+      "path": "samples\\archived-approvals\\other\\8010187958_1076_Full_Questionnaire_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "8010187958",
+      "subject": "Kaniel #8010187958 - Updated Approval  (Condo Review Only)",
+      "from": "Melissa Nunez <mnunez@myndm.com>",
+      "inbox": "John",
+      "msgId": "19dd62c67db74c24",
+      "savedAt": "2026-06-11T00:19:04.759Z"
+    },
+    "a203b11ae823862c": {
+      "path": "samples\\archived-approvals\\other\\8010187958_Presale_Form_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "8010187958",
+      "subject": "Kaniel #8010187958 - Updated Approval  (Condo Review Only)",
+      "from": "Melissa Nunez <mnunez@myndm.com>",
+      "inbox": "John",
+      "msgId": "19dd62c67db74c24",
+      "savedAt": "2026-06-11T00:19:05.121Z"
+    },
+    "c95876d53480353a": {
+      "path": "samples\\archived-approvals\\acra\\8010187958_Broker_Loan_Approval_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": "8010187958",
+      "subject": "Kaniel #8010187958 - Approval",
+      "from": "Kellie Wieczorkowski <kelliew@myndm.com>",
+      "inbox": "John",
+      "msgId": "19dd482d7c0198fb",
+      "savedAt": "2026-06-11T00:19:10.522Z"
+    },
+    "7ef3b7f45d936e1f": {
+      "path": "samples\\archived-approvals\\other\\2603058183_Borrowers_Certification_&_Authorization_(1)_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "2603058183",
+      "subject": "RE: [EXTERNAL] Cake TPO - Ben Harush - 2603058183 - 11751 Shawnee Road - Updated Conditional Approval",
+      "from": "Narine Aivazian <narine.aivazian@cakehome.com>",
+      "inbox": "John",
+      "msgId": "19dc1cb938e27daf",
+      "savedAt": "2026-06-11T00:19:24.046Z"
+    },
+    "147586d1c12ea617": {
+      "path": "samples\\archived-approvals\\acra\\8010187508_Approval_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": "8010187508",
+      "subject": "Yanez Sanchez #8010187508 - Updated Approval",
+      "from": "Elizabeth DeHeer <EDeHeer@myndm.com>",
+      "inbox": "John",
+      "msgId": "19dc01f8e4377091",
+      "savedAt": "2026-06-11T00:19:31.960Z"
+    },
+    "ba823fe810a240eb": {
+      "path": "samples\\archived-approvals\\acra\\2603058183_Tal_Ben_Harush_Conditional_Approval_Letter_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": "2603058183",
+      "subject": "Cake TPO - Ben Harush - 2603058183 - 11751 Shawnee Road - Updated Conditional Approval",
+      "from": "James McGuigan <james.mcguigan@cakehome.com>",
+      "inbox": "John",
+      "msgId": "19dbcd3f38be5bed",
+      "savedAt": "2026-06-11T00:19:37.749Z"
+    },
+    "4b7820cd93c8c3be": {
+      "path": "samples\\archived-approvals\\acra\\8010187508_Approval_2026-06-11_1.pdf",
+      "lender": "acra",
+      "loan": "8010187508",
+      "subject": "Yanez Sanchez #8010187508 - Updated Approval",
+      "from": "Elizabeth DeHeer <EDeHeer@myndm.com>",
+      "inbox": "John",
+      "msgId": "19dac26a7b350b78",
+      "savedAt": "2026-06-11T00:20:18.555Z"
+    },
+    "ea021bc559370a53": {
+      "path": "samples\\archived-approvals\\acra\\8010187508_Approval_2026-06-11_2.pdf",
+      "lender": "acra",
+      "loan": "8010187508",
+      "subject": "Yanez Sanchez #8010187508 - Updated Approval",
+      "from": "Elizabeth DeHeer <EDeHeer@myndm.com>",
+      "inbox": "John",
+      "msgId": "19dabab8099c53f7",
+      "savedAt": "2026-06-11T00:20:20.554Z"
+    },
+    "4e8626758d59535e": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_sidi_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Sidi Approval",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19d98312d6c89cbb",
+      "savedAt": "2026-06-11T00:20:47.949Z"
+    },
+    "3d62ad3bbbcaf452": {
+      "path": "samples\\archived-approvals\\acra\\7516442_Malki_-_Updated_UW_Worksheet_-_4-16-26_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": "7516442",
+      "subject": "Malki - Updated Approval",
+      "from": "Melina Walzer <melina.walzer@acralending.com>",
+      "inbox": "John",
+      "msgId": "19d9789696e3d841",
+      "savedAt": "2026-06-11T00:20:51.016Z"
+    },
+    "07e55658062ef3bf": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_Malki-_Outstanding_PTD_Conditions_4-16-26_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "Malki - Updated Approval",
+      "from": "Melina Walzer <melina.walzer@acralending.com>",
+      "inbox": "John",
+      "msgId": "19d9789696e3d841",
+      "savedAt": "2026-06-11T00:20:51.360Z"
+    },
+    "3aac2467ef14492f": {
+      "path": "samples\\archived-approvals\\acra\\8010187508_Approval_2026-06-11_3.pdf",
+      "lender": "acra",
+      "loan": "8010187508",
+      "subject": "Yanez Sanchez #8010187508 - Updated Approval",
+      "from": "Elizabeth DeHeer <EDeHeer@myndm.com>",
+      "inbox": "John",
+      "msgId": "19d92b68111e1774",
+      "savedAt": "2026-06-11T00:21:00.680Z"
+    },
+    "fe9a30d87dad63f3": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_H19-311._Certificate_of_Approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Associate Approval Attached",
+      "from": "Hugo Hernandez <hinvestorgroup@gmail.com>",
+      "inbox": "John",
+      "msgId": "19d91dc7b5f14ec4",
+      "savedAt": "2026-06-11T00:21:05.409Z"
+    },
+    "dc37bfff1860497b": {
+      "path": "samples\\archived-approvals\\Resicentral\\unknown-loan_Attachment-8335e6af-f35b-4f78-b9b3-4d280f520db6_2026-06-11.pdf",
+      "lender": "Resicentral",
+      "loan": null,
+      "subject": "Oshri Atias Approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19d8d29a165c6a72",
+      "savedAt": "2026-06-11T00:21:14.336Z"
+    },
+    "2f3f5fc6633d9e03": {
+      "path": "samples\\archived-approvals\\acra\\8010187508_Approval_2026-06-11_4.pdf",
+      "lender": "acra",
+      "loan": "8010187508",
+      "subject": "Yanez Sanchez #8010187508 - Updated Approval",
+      "from": "Elizabeth DeHeer <EDeHeer@myndm.com>",
+      "inbox": "John",
+      "msgId": "19d882d116ecb6ca",
+      "savedAt": "2026-06-11T00:21:25.829Z"
+    },
+    "8429bf89bed4067b": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Cristian_Pre-approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Cristian Pre-approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19d8720a7bc1492b",
+      "savedAt": "2026-06-11T00:21:28.827Z"
+    },
+    "cb561f2e88dabb0f": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_44BC_Conditional_Approved_Letter_-_Clean_Paws__4.10.26_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "FW: Approval Letter",
+      "from": "Jonathan Lorber <JonathanLorber@keyes.com>",
+      "inbox": "John",
+      "msgId": "19d84148445fc684",
+      "savedAt": "2026-06-11T00:21:30.168Z"
+    },
+    "5db05afd8f853fd9": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_Malki_-_7516442_-_Approval_-_4-8-26_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "Re: Malki loan approval and extension request",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19d6d79616f6afbf",
+      "savedAt": "2026-06-11T00:22:13.617Z"
+    },
+    "9ae75eb8f77aa095": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Joint_Account_(airbnb)_-_013126_WellsFargo_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Malki loan approval and extension request",
+      "from": "Batel Kook <batel.malki@gmail.com>",
+      "inbox": "John",
+      "msgId": "19d69267171c4436",
+      "savedAt": "2026-06-11T00:22:23.218Z"
+    },
+    "403dd7c5e9fbd7f7": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Joint_Account_(airbnb)_-033126_WellsFargo_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Malki loan approval and extension request",
+      "from": "Batel Kook <batel.malki@gmail.com>",
+      "inbox": "John",
+      "msgId": "19d69267171c4436",
+      "savedAt": "2026-06-11T00:22:23.575Z"
+    },
+    "5bfe74fc272a92a7": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Joint_Account_(airbnb)_-_022826_WellsFargo_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Malki loan approval and extension request",
+      "from": "Batel Kook <batel.malki@gmail.com>",
+      "inbox": "John",
+      "msgId": "19d69267171c4436",
+      "savedAt": "2026-06-11T00:22:23.898Z"
+    },
+    "91263725baf0a23f": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Dahan_&_Yairi_Pre-approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Dahan & Nir Pre-approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19d68e9932833aa7",
+      "savedAt": "2026-06-11T00:22:27.795Z"
+    },
+    "597b5621844cc2e7": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_Malki_-_7516442_-_Initial_Approval_-_4-6-26_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "Malki loan approval and extension request",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19d68b12bb20ca1a",
+      "savedAt": "2026-06-11T00:22:28.291Z"
+    },
+    "68b1a2fcb7866426": {
+      "path": "samples\\archived-approvals\\acra\\8010187508_Approval_2026-06-11_5.pdf",
+      "lender": "acra",
+      "loan": "8010187508",
+      "subject": "Fwd: Yanez Sanchez #8010187508 - Approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19d450b543c83d50",
+      "savedAt": "2026-06-11T00:23:36.541Z"
+    },
+    "adc8f07b8244f0e5": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_126061070600_BENHARUSH_encrypted_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "126061070600 [Initial Closing Disclosure Sent for Approval] Benharush, Tal",
+      "from": "brokerscd@swmc.com",
+      "inbox": "John",
+      "msgId": "19d4504a3af858c4",
+      "savedAt": "2026-06-11T00:23:37.313Z"
+    },
+    "a0d317dd134c7b28": {
+      "path": "samples\\archived-approvals\\acra\\2603058183_Tal_Ben_Harush_Conditional_Approval_Letter_2026-06-11_1.pdf",
+      "lender": "acra",
+      "loan": "2603058183",
+      "subject": "Cake TPO - Ben Harush - 2603058183 - 11751 Shawnee Road - Updated Conditional Approval",
+      "from": "James McGuigan <james.mcguigan@cakehome.com>",
+      "inbox": "John",
+      "msgId": "19d44c02ff1cb24c",
+      "savedAt": "2026-06-11T00:23:39.247Z"
+    },
+    "bc8a6fd17141db9d": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_acra-E_consent_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "Acra - Rate Match Approval - Melki",
+      "from": "Melina Walzer <melina.walzer@acralending.com>",
+      "inbox": "John",
+      "msgId": "19d4448a052a14fa",
+      "savedAt": "2026-06-11T00:23:42.100Z"
+    },
+    "0e622bf61934b1a5": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Benishay1003_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Ben Ishay pre approval",
+      "from": "Yaeli Sisson <ysisson@aol.com>",
+      "inbox": "John",
+      "msgId": "19d4037ecf58e245",
+      "savedAt": "2026-06-11T00:23:55.388Z"
+    },
+    "046b5df11e69cc60": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_FL_Approval_Letter_2026-06-11_2.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "FL Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19d3b72cfc9740a8",
+      "savedAt": "2026-06-11T00:24:03.158Z"
+    },
+    "422dd9d19940e858": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_FL_Approval_Letter_2026-06-11_3.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "FL Approval Letter 470k",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19d3b614d4634196",
+      "savedAt": "2026-06-11T00:24:03.791Z"
+    },
+    "b39de29cccfe44fc": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Cowan_VA_Pre-approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Cowan Pre-approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19d311bbc175c775",
+      "savedAt": "2026-06-11T00:24:06.988Z"
+    },
+    "07acece5a56bfc74": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_126058063600_BENHARUSH_encrypted_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "126058063600 [Initial Closing Disclosure Sent for Approval] Benharush, Tal",
+      "from": "brokerscd@swmc.com",
+      "inbox": "John",
+      "msgId": "19d1b30eea0aeeab",
+      "savedAt": "2026-06-11T00:24:58.524Z"
+    },
+    "ee64ecd38dd3a564": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_126058061500_BENHARUSH_encrypted_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "126058061500 [Revised Loan Estimate for Approval] Benharush, Tal",
+      "from": "loanboarding@swmc.com",
+      "inbox": "John",
+      "msgId": "19d1a6249c41b240",
+      "savedAt": "2026-06-11T00:25:01.161Z"
+    },
+    "48262f311fb0a665": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_126061073500_BENHARUSH_encrypted_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "126061073500 [Initial Closing Disclosure Sent for Approval] Benharush, Tal",
+      "from": "brokerscd@swmc.com",
+      "inbox": "John",
+      "msgId": "19d1643810a6979c",
+      "savedAt": "2026-06-11T00:25:02.111Z"
+    },
+    "1bfff391d06c861b": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_126058063600_BENHARUSH_encrypted_2026-06-11_1.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "126058063600 [Revised Loan Estimate for Approval] Benharush, Tal",
+      "from": "loanboarding@swmc.com",
+      "inbox": "John",
+      "msgId": "19d10022a50493f7",
+      "savedAt": "2026-06-11T00:25:03.123Z"
+    },
+    "4f069cc7bdca01e3": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_126061073200_BENHARUSH_encrypted_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "126061073200 [Initial Closing Disclosure Sent for Approval] Benharush, Tal",
+      "from": "brokerscd@swmc.com",
+      "inbox": "John",
+      "msgId": "19d0be41f344c31f",
+      "savedAt": "2026-06-11T00:25:06.654Z"
+    },
+    "17a9b11a1d53ba94": {
+      "path": "samples\\archived-approvals\\thelender\\800157197_800157197_Doherty_Conditional_Approval_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": "800157197",
+      "subject": "800157197 Doherty Initial Approval",
+      "from": "uwdept@theloanstore.com",
+      "inbox": "John",
+      "msgId": "19cf71955074377d",
+      "savedAt": "2026-06-11T00:26:35.038Z"
+    },
+    "d420cb4f0cedd501": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_free_and_clear_210_174th_st_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Ofir approval - can we review this?",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19cd329a9b0249c1",
+      "savedAt": "2026-06-11T00:28:24.650Z"
+    },
+    "1367401bf7e182cf": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_Ofir_Acra_approval_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "2691 NW 83rd Terrace - Ofir Conditional Approval",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19cc9f9381ed095d",
+      "savedAt": "2026-06-11T00:28:38.451Z"
+    },
+    "4668daa32221a957": {
+      "path": "samples\\archived-approvals\\Resicentral\\unknown-loan_Final_Approval_2026-06-11.pdf",
+      "lender": "Resicentral",
+      "loan": null,
+      "subject": "SHOKRON #5020043245 FINAL APPROVAL!!!!",
+      "from": "Dayna Coen <dcoen@resicentral.com>",
+      "inbox": "John",
+      "msgId": "19cc06c00d83f588",
+      "savedAt": "2026-06-11T00:28:55.924Z"
+    },
+    "ca3890553948c82b": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_KG_approvals_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Approval Letter Kerline",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19cb4c6ccf10fe44",
+      "savedAt": "2026-06-11T00:29:39.221Z"
+    },
+    "c27fb350e1711c29": {
+      "path": "samples\\archived-approvals\\Resicentral\\unknown-loan_Conditional_Approval_0303._2026-06-11.pdf",
+      "lender": "Resicentral",
+      "loan": null,
+      "subject": "SHOKRON 5020043245 Conditional Approval",
+      "from": "Dayna Coen <dcoen@resicentral.com>",
+      "inbox": "John",
+      "msgId": "19cb4abd89149a86",
+      "savedAt": "2026-06-11T00:29:40.833Z"
+    },
+    "b6690672ad86bd49": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_KG_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Approval Letter Kerline",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19cb10619fed98c9",
+      "savedAt": "2026-06-11T00:29:48.846Z"
+    },
+    "f579b1aaafe5003c": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_JG_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "219 approval letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19ca1a0b2c44752f",
+      "savedAt": "2026-06-11T00:30:05.598Z"
+    },
+    "846d1dd2c2419483": {
+      "path": "samples\\archived-approvals\\thelender\\800155773_800155773_Dimant_Conditional_Approval_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": "800155773",
+      "subject": "800155773 Dimant Initial Approval",
+      "from": "uwdept@theloanstore.com",
+      "inbox": "John",
+      "msgId": "19ca000984e79f2a",
+      "savedAt": "2026-06-11T00:30:14.706Z"
+    },
+    "1d5720295b620074": {
+      "path": "samples\\archived-approvals\\UWM\\unknown-loan_ApprovalLetter1226125243_2026-06-11.pdf",
+      "lender": "UWM",
+      "loan": null,
+      "subject": "Approval",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c9c6529065ae13",
+      "savedAt": "2026-06-11T00:30:17.792Z"
+    },
+    "c87356d8baf1a725": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_NM_approval_letter_(1)_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c96a7cd98b3d65",
+      "savedAt": "2026-06-11T00:30:30.721Z"
+    },
+    "27e2f6b23c071f04": {
+      "path": "samples\\archived-approvals\\thelender\\800155785_800155785_Dimant_Conditional_Approval_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": "800155785",
+      "subject": "800155785 Dimant Initial Approval",
+      "from": "uwdept@theloanstore.com",
+      "inbox": "John",
+      "msgId": "19c95a16b60d76dd",
+      "savedAt": "2026-06-11T00:30:37.527Z"
+    },
+    "e18d2f5407b140c2": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Xiang_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Xiang Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c9231c503df5f4",
+      "savedAt": "2026-06-11T00:30:41.449Z"
+    },
+    "bd6eb12e58c6dfe2": {
+      "path": "samples\\archived-approvals\\Resicentral\\unknown-loan_SHOKRON_Approval_5020043245_2026-06-11.pdf",
+      "lender": "Resicentral",
+      "loan": null,
+      "subject": "SHOKRON #5020043245  Updated Approval",
+      "from": "Dayna Coen <dcoen@resicentral.com>",
+      "inbox": "John",
+      "msgId": "19c91a23ad08d407",
+      "savedAt": "2026-06-11T00:30:44.804Z"
+    },
+    "8bec391ad6b7e3fe": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Justin_Peraza_Disputes_1_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Approval Letter Docs",
+      "from": "Justin Peraza <jperaza96@aol.com>",
+      "inbox": "John",
+      "msgId": "19c913c0ba63c2fe",
+      "savedAt": "2026-06-11T00:30:48.228Z"
+    },
+    "677d40abcc00c53c": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Experian_send_morgage_1_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Approval Letter Docs",
+      "from": "Justin Peraza <jperaza96@aol.com>",
+      "inbox": "John",
+      "msgId": "19c8cc08a4376016",
+      "savedAt": "2026-06-11T00:30:59.830Z"
+    },
+    "d59a42d3df548257": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_126050054900_PIWOWARSKI_encrypted_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "126050054900 [Loan Estimate Sent For Approval] Piwowarski, Zbigniew",
+      "from": "loanboarding@swmc.com",
+      "inbox": "John",
+      "msgId": "19c83ecd7cb18474",
+      "savedAt": "2026-06-11T00:31:11.389Z"
+    },
+    "486bab36a55abf15": {
+      "path": "samples\\archived-approvals\\other\\4260113489_SP-Requirements_09_6821_4102_ELT-910.pdf_-_Jan_27th,_2_19_PM_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "4260113489",
+      "subject": "Re: Campbell/4260113489 - Updated Loan Approval & Outstanding Conditions Letter",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c7bf7e732391eb",
+      "savedAt": "2026-06-11T00:31:18.814Z"
+    },
+    "e64592ed0324841b": {
+      "path": "samples\\archived-approvals\\other\\4260113489_ELT910-305_Crestview_Circle-Commitment_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "4260113489",
+      "subject": "Re: Campbell/4260113489 - Updated Loan Approval & Outstanding Conditions Letter",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c7bc04f20a8581",
+      "savedAt": "2026-06-11T00:31:21.047Z"
+    },
+    "7c75ab478e7fe070": {
+      "path": "samples\\archived-approvals\\other\\4260113489_Title_email_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "4260113489",
+      "subject": "Re: Campbell/4260113489 - Updated Loan Approval & Outstanding Conditions Letter",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c7bc04f20a8581",
+      "savedAt": "2026-06-11T00:31:21.411Z"
+    },
+    "c68dc232321ec2eb": {
+      "path": "samples\\archived-approvals\\other\\4260113489_Vesting_Deed_(1)_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "4260113489",
+      "subject": "Re: Campbell/4260113489 - Updated Loan Approval & Outstanding Conditions Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c7b79a8ceca040",
+      "savedAt": "2026-06-11T00:31:25.346Z"
+    },
+    "3ad4f08f668055f1": {
+      "path": "samples\\archived-approvals\\other\\4260113489_Notes_(1)_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "4260113489",
+      "subject": "Re: Campbell/4260113489 - Updated Loan Approval & Outstanding Conditions Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c7b79a8ceca040",
+      "savedAt": "2026-06-11T00:31:25.644Z"
+    },
+    "0217bf62b862d898": {
+      "path": "samples\\archived-approvals\\other\\4260113489_DH_Insurance_Requirements_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "4260113489",
+      "subject": "Campbell/4260113489 - Updated Loan Approval & Outstanding Conditions Letter",
+      "from": "Melodie Clayton <mclayton@deephavenmortgage.com>",
+      "inbox": "John",
+      "msgId": "19c784bd6003ccd7",
+      "savedAt": "2026-06-11T00:31:30.649Z"
+    },
+    "f276c91bdc56d7f4": {
+      "path": "samples\\archived-approvals\\thelender\\110100022905_Loan_Decision_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": "110100022905",
+      "subject": "Loan number 110100022905 -  Saloniki , Adi approval has been updated",
+      "from": "No Reply <noreply@thelender.com>",
+      "inbox": "John",
+      "msgId": "19c719a4a05cc8fd",
+      "savedAt": "2026-06-11T00:32:03.199Z"
+    },
+    "b1ab14f52e5cdea8": {
+      "path": "samples\\archived-approvals\\newfi\\6260101158_6260101158_ApprovalCertificate_2026-06-11.pdf",
+      "lender": "newfi",
+      "loan": "6260101158",
+      "subject": "6260101158 - Levi - Underwriting Approval Certificate",
+      "from": "evalverde@archome.com",
+      "inbox": "John",
+      "msgId": "19c71368739e55f4",
+      "savedAt": "2026-06-11T00:32:06.705Z"
+    },
+    "bf9606d77ea09106": {
+      "path": "samples\\archived-approvals\\newfi\\6260101158_Policy_Packet_Escrow-OICFXFL_01648946-1_(1)_2026-06-11.pdf",
+      "lender": "newfi",
+      "loan": "6260101158",
+      "subject": "Re: 6260101158 - Levi - Underwriting Approval Certificate",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c6cb9a4225d416",
+      "savedAt": "2026-06-11T00:32:23.814Z"
+    },
+    "d20d0430d9a85893": {
+      "path": "samples\\archived-approvals\\newfi\\6260101158_0000157112-SubmissionPacket-02-19-2026_(1)_2026-06-11.pdf",
+      "lender": "newfi",
+      "loan": "6260101158",
+      "subject": "Re: 6260101158 - Levi - Underwriting Approval Certificate",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c6cb9a4225d416",
+      "savedAt": "2026-06-11T00:32:24.201Z"
+    },
+    "932c2e66206e1fbb": {
+      "path": "samples\\archived-approvals\\newfi\\6260101158_6260101158_ApprovalCertificate_2026-06-11_1.pdf",
+      "lender": "newfi",
+      "loan": "6260101158",
+      "subject": "6260101158 - Levi - Underwriting Approval Certificate",
+      "from": "archomemessages@archome.com",
+      "inbox": "John",
+      "msgId": "19c6caca3969988c",
+      "savedAt": "2026-06-11T00:32:25.334Z"
+    },
+    "26adaaa654dd5ad1": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_126033029100_TILA-COHEN_encrypted_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "126033029100 [Initial Closing Disclosure - Sent for Approval] Tila-cohen, Itamar",
+      "from": "brokerscd@swmc.com",
+      "inbox": "John",
+      "msgId": "19c6b4a85b522ec3",
+      "savedAt": "2026-06-11T00:32:36.558Z"
+    },
+    "3cdd309df6cfe4bb": {
+      "path": "samples\\archived-approvals\\newfi\\6260101158_CamScanner_13.57_13.2.2026_2026-06-11.pdf",
+      "lender": "newfi",
+      "loan": "6260101158",
+      "subject": "Re: 6260101158 - Or Levi - Underwriting Approval Certificate",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c588097e591154",
+      "savedAt": "2026-06-11T00:32:45.224Z"
+    },
+    "0438f444d16e145a": {
+      "path": "samples\\archived-approvals\\newfi\\6260101158_CD_printout_2.13.26_2026-06-11.pdf",
+      "lender": "newfi",
+      "loan": "6260101158",
+      "subject": "Re: 6260101158 - Or Levi - Underwriting Approval Certificate",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c588097e591154",
+      "savedAt": "2026-06-11T00:32:45.545Z"
+    },
+    "4e9f2555e1507efc": {
+      "path": "samples\\archived-approvals\\newfi\\6260101158_Credit_report_invoice_2026-06-11.pdf",
+      "lender": "newfi",
+      "loan": "6260101158",
+      "subject": "Re: 6260101158 - Or Levi - Underwriting Approval Certificate",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c5836c448f8efd",
+      "savedAt": "2026-06-11T00:32:47.011Z"
+    },
+    "4379c35c540580e6": {
+      "path": "samples\\archived-approvals\\newfi\\6260101158_FL_ALTA_Commitment_for_Title_Insurance_(2021)_-_FA_-_Copy_(4)_(1)_2026-06-11.pdf",
+      "lender": "newfi",
+      "loan": "6260101158",
+      "subject": "Re: 6260101158 - Or Levi - Underwriting Approval Certificate",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c5836c448f8efd",
+      "savedAt": "2026-06-11T00:32:47.485Z"
+    },
+    "b2fe0e8409b76ea8": {
+      "path": "samples\\archived-approvals\\newfi\\6260101158_Landlord_LOE_2026-06-11.pdf",
+      "lender": "newfi",
+      "loan": "6260101158",
+      "subject": "Re: 6260101158 - Or Levi - Underwriting Approval Certificate",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c5831c4877c467",
+      "savedAt": "2026-06-11T00:32:47.916Z"
+    },
+    "781bb34144e537a0": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_KE_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Approval Letter Kerline",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c53d9ccd99cab8",
+      "savedAt": "2026-06-11T00:32:57.315Z"
+    },
+    "99d3d90e2319f11e": {
+      "path": "samples\\archived-approvals\\newfi\\6260101158_6260101158_ApprovalCertificate_2026-06-11_2.pdf",
+      "lender": "newfi",
+      "loan": "6260101158",
+      "subject": "6260101158 - Levi - Underwriting Approval Certificate",
+      "from": "archomemessages@archome.com",
+      "inbox": "John",
+      "msgId": "19c530b060e2285b",
+      "savedAt": "2026-06-11T00:33:03.288Z"
+    },
+    "3580bfcb4b37e916": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_126033033200_DAVIDOV_encrypted_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "126033033200 [Revised Loan Estimate for Approval] Davidov, Shay",
+      "from": "loanboarding@swmc.com",
+      "inbox": "John",
+      "msgId": "19c453ea412ad04e",
+      "savedAt": "2026-06-11T00:33:53.361Z"
+    },
+    "cab66ccd49ae98ce": {
+      "path": "samples\\archived-approvals\\thelender\\110100022905_Prelim_CD_Saloniki_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": "110100022905",
+      "subject": "Re: Loan number 110100022905 -  Saloniki , Adi approval has been updated",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c44e66743532dd",
+      "savedAt": "2026-06-11T00:33:54.310Z"
+    },
+    "544bf9ddcfdd65f5": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_PHCAPP_319-21_S_3rd_St_2.9.2026_light_fixtures_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: 319-21 S 3rd St front light approval",
+      "from": "preservation <preservation@phila.gov>",
+      "inbox": "John",
+      "msgId": "19c44276d35c3e96",
+      "savedAt": "2026-06-11T00:33:59.107Z"
+    },
+    "f3261fd4c017bdbf": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Approval_4975_Whispering_way_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "4975 Whispering Way Approval",
+      "from": "\"dbrodny@aol.com\" <dbrodny@aol.com>",
+      "inbox": "John",
+      "msgId": "19c43ec6fb31d0ab",
+      "savedAt": "2026-06-11T00:34:00.815Z"
+    },
+    "602fa61e45d7ede9": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Non_QM_Business_NArrative_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "RE: Tila - Cohen - 90260200044 *** Loan Approval - 2/9/2026 ***",
+      "from": "Edgar Rodriguez <erodriguez@bluepointmtg.com>",
+      "inbox": "John",
+      "msgId": "19c43d9facefde03",
+      "savedAt": "2026-06-11T00:34:01.790Z"
+    },
+    "09c15d4970c134f8": {
+      "path": "samples\\archived-approvals\\newfi\\unknown-loan_APPROVAL_CERTIFICATE_2026-06-11.pdf",
+      "lender": "newfi",
+      "loan": null,
+      "subject": "Tila - Cohen - 90260200044 *** Loan Approval - 2/9/2026 ***",
+      "from": "Alex Tran <atran@bluepointmtg.com>",
+      "inbox": "John",
+      "msgId": "19c43cdf600f5f37",
+      "savedAt": "2026-06-11T00:34:02.622Z"
+    },
+    "81cce5a3cae31d17": {
+      "path": "samples\\archived-approvals\\thelender\\110100022905_Loan_Decision_2026-06-11_1.pdf",
+      "lender": "thelender",
+      "loan": "110100022905",
+      "subject": "Loan number 110100022905 -  Saloniki , Adi approval has been updated",
+      "from": "No Reply <noreply@thelender.com>",
+      "inbox": "John",
+      "msgId": "19c354279763b273",
+      "savedAt": "2026-06-11T00:34:13.720Z"
+    },
+    "d007ec6743d0a54f": {
+      "path": "samples\\archived-approvals\\newfi\\6260101158_6260101158_ApprovalCertificate_2026-06-11_3.pdf",
+      "lender": "newfi",
+      "loan": "6260101158",
+      "subject": "6260101158 - Levi - Underwriting Approval Certificate",
+      "from": "archomemessages@archome.com",
+      "inbox": "John",
+      "msgId": "19c298f26c726dd7",
+      "savedAt": "2026-06-11T00:34:41.150Z"
+    },
+    "ae4e911c5070ab85": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_GH_Approval_Letter_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Approval Letter For German",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c259b435b6beea",
+      "savedAt": "2026-06-11T00:34:45.940Z"
+    },
+    "35bc3fa3a004315a": {
+      "path": "samples\\archived-approvals\\newfi\\6260101158_6260101158_ApprovalCertificate_2026-06-11_4.pdf",
+      "lender": "newfi",
+      "loan": "6260101158",
+      "subject": "6260101158 - Levi - Underwriting Approval Certificate",
+      "from": "archomemessages@archome.com",
+      "inbox": "John",
+      "msgId": "19c242320b5450a4",
+      "savedAt": "2026-06-11T00:34:54.925Z"
+    },
+    "4e151c5956fe6a00": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_126030012200_DAVIDOV_encrypted_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "126030012200 [Loan Estimate Sent for Approval] Davidov, Shay",
+      "from": "loanboarding@swmc.com",
+      "inbox": "John",
+      "msgId": "19c178d7d7066cdb",
+      "savedAt": "2026-06-11T00:35:11.005Z"
+    },
+    "3d6d4d1b74e98fd5": {
+      "path": "samples\\archived-approvals\\thelender\\110100022905_Loan_Decision_2026-06-11_2.pdf",
+      "lender": "thelender",
+      "loan": "110100022905",
+      "subject": "Loan number 110100022905 -  Saloniki , Adi approval has been updated",
+      "from": "No Reply <noreply@thelender.com>",
+      "inbox": "John",
+      "msgId": "19c111f113035b56",
+      "savedAt": "2026-06-11T00:35:13.084Z"
+    },
+    "aa5f251c406e5dcd": {
+      "path": "samples\\archived-approvals\\newfi\\6260101158_6260101158_ApprovalCertificate_2026-06-11_5.pdf",
+      "lender": "newfi",
+      "loan": "6260101158",
+      "subject": "6260101158 - Levi - Underwriting Approval Certificate",
+      "from": "archomemessages@archome.com",
+      "inbox": "John",
+      "msgId": "19c107e429746109",
+      "savedAt": "2026-06-11T00:35:15.608Z"
+    },
+    "cc8092830e65ae31": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Shai_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c0fc38b99d8c04",
+      "savedAt": "2026-06-11T00:35:19.710Z"
+    },
+    "851efadcd04aed4b": {
+      "path": "samples\\archived-approvals\\other\\2601013021___29012026102141_-_Approval_Form_-_Open_Conditons_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "2601013021",
+      "subject": "Conditional Approval: Elkoubi/13021",
+      "from": "No Reply Approvals <no.replyapprovals@emporiumtpo.com>",
+      "inbox": "John",
+      "msgId": "19c0cec155c5354d",
+      "savedAt": "2026-06-11T00:35:25.909Z"
+    },
+    "4ffda71fa1f32de0": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Closing_Information_Sheet_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Initial Conditional Approval: Martin/2512012772",
+      "from": "Taylor Colton <taylor.colton@emporiumtpo.com>",
+      "inbox": "John",
+      "msgId": "19c06d4e36fb8bcc",
+      "savedAt": "2026-06-11T00:35:43.281Z"
+    },
+    "bd8c57a206062c4b": {
+      "path": "samples\\archived-approvals\\thelender\\110100022905_CDDOC-ORDER_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": "110100022905",
+      "subject": "RE: Loan number 110100022905 -  Saloniki , Adi approval has been updated",
+      "from": "Elijah Trotier <etrotier@thelender.com>",
+      "inbox": "John",
+      "msgId": "19c06bb509166311",
+      "savedAt": "2026-06-11T00:35:44.964Z"
+    },
+    "31fc0c7cbd697ddd": {
+      "path": "samples\\archived-approvals\\thelender\\110100022905_How-to-request-an-Initial-CD-from-theSPOT_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": "110100022905",
+      "subject": "RE: Loan number 110100022905 -  Saloniki , Adi approval has been updated",
+      "from": "Elijah Trotier <etrotier@thelender.com>",
+      "inbox": "John",
+      "msgId": "19c06bb509166311",
+      "savedAt": "2026-06-11T00:35:45.430Z"
+    },
+    "9993ff2667e4224d": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_ITC_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c0600e809bfbd6",
+      "savedAt": "2026-06-11T00:35:51.304Z"
+    },
+    "1b52915259ea2283": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Cohen_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c01bffa0fdb88e",
+      "savedAt": "2026-06-11T00:36:01.320Z"
+    },
+    "bd7e653f2ad3ea8b": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Cohen_approval_2026-06-11_1.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c01bd066ec7f76",
+      "savedAt": "2026-06-11T00:36:02.244Z"
+    },
+    "ecd8ac1950114ed6": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_KC_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Carrasco Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19c00edfbfda3fb8",
+      "savedAt": "2026-06-11T00:36:08.975Z"
+    },
+    "578bdf73643ddc35": {
+      "path": "samples\\archived-approvals\\thelender\\110100022905_Loan_Decision_2026-06-11_3.pdf",
+      "lender": "thelender",
+      "loan": "110100022905",
+      "subject": "Loan number 110100022905 -  Saloniki , Adi approval has been updated",
+      "from": "No Reply <noreply@thelender.com>",
+      "inbox": "John",
+      "msgId": "19bed97f52cdc4ef",
+      "savedAt": "2026-06-11T00:36:29.289Z"
+    },
+    "9fe68a5ad87fd143": {
+      "path": "samples\\archived-approvals\\UWM\\unknown-loan_Ariel_Veronica_DU_2026-06-11.pdf",
+      "lender": "UWM",
+      "loan": null,
+      "subject": "DU and Pre-Approval",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19be8c691dea491d",
+      "savedAt": "2026-06-11T00:36:42.696Z"
+    },
+    "cd54cc6bc793ae39": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_AV_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "DU and Pre-Approval",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19be8c691dea491d",
+      "savedAt": "2026-06-11T00:36:43.026Z"
+    },
+    "6f045d581d1073a4": {
+      "path": "samples\\archived-approvals\\other\\2601013021_17012026014242_-_Approval_Form_-_Open_Conditons_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "2601013021",
+      "subject": "Initial Conditional Approval: Elkoubi/2601013021",
+      "from": "Taylor Colton <taylor.colton@emporiumtpo.com>",
+      "inbox": "John",
+      "msgId": "19bd3150a9628d94",
+      "savedAt": "2026-06-11T00:37:28.476Z"
+    },
+    "9887cb9b71f46362": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Business_Narrative_for_Flex_NQM_Income_(3)_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: 800145915 Lorber Initial Approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19bc7c61e99b8833",
+      "savedAt": "2026-06-11T00:37:41.837Z"
+    },
+    "6a6ce58f8817385c": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_statement_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "RE: 800145915 Lorber Initial Approval",
+      "from": "Jonathan Lorber <JonathanLorber@keyes.com>",
+      "inbox": "John",
+      "msgId": "19bc788833aaa315",
+      "savedAt": "2026-06-11T00:37:43.362Z"
+    },
+    "085c835542bfdaec": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_1010_N._Federal_Hwy_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "RE: 800145915 Lorber Initial Approval",
+      "from": "Jonathan Lorber <JonathanLorber@keyes.com>",
+      "inbox": "John",
+      "msgId": "19bc7864ab40d65c",
+      "savedAt": "2026-06-11T00:37:43.873Z"
+    },
+    "1695424112c5dead": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_1614_Fletcher_St_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "RE: 800145915 Lorber Initial Approval",
+      "from": "Jonathan Lorber <JonathanLorber@keyes.com>",
+      "inbox": "John",
+      "msgId": "19bc7864ab40d65c",
+      "savedAt": "2026-06-11T00:37:44.259Z"
+    },
+    "5b3131ea6b5bf673": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_1521_Funston_St_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "RE: 800145915 Lorber Initial Approval",
+      "from": "Jonathan Lorber <JonathanLorber@keyes.com>",
+      "inbox": "John",
+      "msgId": "19bc7864ab40d65c",
+      "savedAt": "2026-06-11T00:37:44.717Z"
+    },
+    "d3a46a071f244fb1": {
+      "path": "samples\\archived-approvals\\thelender\\800145915_800145915_Lorber_Conditional_Approval_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": "800145915",
+      "subject": "Fwd: 800145915 Lorber Initial Approval",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19bc76407a9c7783",
+      "savedAt": "2026-06-11T00:37:45.689Z"
+    },
+    "8ac62edfd8bc9111": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_or_levi_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Or Levi Approval",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19bc3751dc148fc4",
+      "savedAt": "2026-06-11T00:37:50.132Z"
+    },
+    "ea705c8858ce97a7": {
+      "path": "samples\\archived-approvals\\thelender\\unknown-loan_updated_--_The-Haven-Broker-Application-Process-Quick-Guide-2.10.2025-_(002)_(002)_(002)_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": null,
+      "subject": "RE: Deephaven Mortgage LLC New Broker Approval - Liberty Group Funding Inc",
+      "from": "Will Myers <wmyers@deephavenmortgage.com>",
+      "inbox": "John",
+      "msgId": "19bc26ea2d2f69a7",
+      "savedAt": "2026-06-11T00:37:57.381Z"
+    },
+    "c7a86271fa176d1d": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Broker_Approval_Letter_Liberty_Group_Funding_Inc_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Deephaven Mortgage LLC New Broker Approval - Liberty Group Funding Inc",
+      "from": "Angie Derring <aderring@deephavenmortgage.com>",
+      "inbox": "John",
+      "msgId": "19bc25f7e3ead2eb",
+      "savedAt": "2026-06-11T00:37:58.271Z"
+    },
+    "7552777e4bacfd18": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Deephaven_Mortgage_LLC_Liberty_Group_Funding_Inc_Broker_Agreement_Signed_Executed_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Deephaven Mortgage LLC New Broker Approval - Liberty Group Funding Inc",
+      "from": "Angie Derring <aderring@deephavenmortgage.com>",
+      "inbox": "John",
+      "msgId": "19bc25f7e3ead2eb",
+      "savedAt": "2026-06-11T00:38:08.132Z"
+    },
+    "75f43c06639acd0a": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_access_form_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Deephaven Broker Approval Application",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19bbef23f4d81359",
+      "savedAt": "2026-06-11T00:38:13.071Z"
+    },
+    "2d85b9b7c5ec700b": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_deephaven_docs_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Deephaven Broker Approval Application",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19bbef23f4d81359",
+      "savedAt": "2026-06-11T00:38:17.514Z"
+    },
+    "7c43f019ca926190": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Resume_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Deephaven Broker Approval Application",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19bbef23f4d81359",
+      "savedAt": "2026-06-11T00:38:17.835Z"
+    },
+    "fa5128ade9d055af": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_AJF_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Approval Letter",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19b9f787083f2426",
+      "savedAt": "2026-06-11T00:39:07.298Z"
+    },
+    "68668a3c40418107": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_Conditional_Loan_Approval_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "Conditional Loan Approval - Duepprath - SECURE",
+      "from": "Do Not Reply <DoNotReply@fundloans.com>",
+      "inbox": "John",
+      "msgId": "19b9017f5cdca672",
+      "savedAt": "2026-06-11T00:39:44.490Z"
+    },
+    "8d31da1a13a58690": {
+      "path": "samples\\archived-approvals\\other\\2512012404___29122025111929_-_Approval_Form_-_Open_Conditons_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "2512012404",
+      "subject": "Conditional Approval: Benharush/12404",
+      "from": "No Reply Approvals <no.replyapprovals@emporiumtpo.com>",
+      "inbox": "John",
+      "msgId": "19b6d7bddd7285c0",
+      "savedAt": "2026-06-11T00:40:23.891Z"
+    },
+    "27b09dea13f3d7ef": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Sonny_approval_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Pre approval",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19b6ac694356245d",
+      "savedAt": "2026-06-11T00:40:33.975Z"
+    },
+    "0c37276e622bc23a": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_ssa_benharush_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Conditional Approval: Benharush/12404",
+      "from": "John George <john@libertygroupfunding.com>",
+      "inbox": "John",
+      "msgId": "19b4d6c2706315c2",
+      "savedAt": "2026-06-11T00:40:43.034Z"
+    },
+    "494fb64a9858e4f2": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_SSA_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Conditional Approval: Benharush/12404",
+      "from": "Taylor Colton <taylor.colton@emporiumtpo.com>",
+      "inbox": "John",
+      "msgId": "19b4d517195b6d16",
+      "savedAt": "2026-06-11T00:40:43.800Z"
+    },
+    "fe656eeae1d79c5c": {
+      "path": "samples\\archived-approvals\\thelender\\800137996_800137996_Elkoubi_Conditional_Approval_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": "800137996",
+      "subject": "800137996 Elkoubi Initial Approval",
+      "from": "uwdept@theloanstore.com",
+      "inbox": "John",
+      "msgId": "19b37e442b9ed049",
+      "savedAt": "2026-06-11T00:41:06.012Z"
+    },
+    "7d489c9c3bc79fc6": {
+      "path": "samples\\archived-approvals\\thelender\\800139154_800139154_Porter_Conditional_Approval_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": "800139154",
+      "subject": "800139154 Porter Initial Approval",
+      "from": "uwdept@theloanstore.com",
+      "inbox": "John",
+      "msgId": "19b1e0712b51d82e",
+      "savedAt": "2026-06-11T00:41:50.487Z"
+    },
+    "5c5730dfdd6f25b1": {
+      "path": "samples\\archived-approvals\\other\\2512012404_10122025123548_-_Approval_Form_-_Open_Conditons_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "2512012404",
+      "subject": "Conditional Approval: Benharush/12404",
+      "from": "Taylor Colton <taylor.colton@emporiumtpo.com>",
+      "inbox": "John",
+      "msgId": "19b0aa16cbffbf9f",
+      "savedAt": "2026-06-11T00:42:20.567Z"
+    },
+    "5f8034a8810c1b33": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Certification_of_Beneficial_Owners_-_Blank_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Conditional Approval: Benharush/12404",
+      "from": "Taylor Colton <taylor.colton@emporiumtpo.com>",
+      "inbox": "John",
+      "msgId": "19b0aa16cbffbf9f",
+      "savedAt": "2026-06-11T00:42:21.005Z"
+    },
+    "2508da41e247e3cb": {
+      "path": "samples\\archived-approvals\\thelender\\unknown-loan_LLC_Borrowing_Certificate_Multi_Member_-_Blank_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": null,
+      "subject": "Conditional Approval: Benharush/12404",
+      "from": "Taylor Colton <taylor.colton@emporiumtpo.com>",
+      "inbox": "John",
+      "msgId": "19b0aa16cbffbf9f",
+      "savedAt": "2026-06-11T00:42:21.305Z"
+    },
+    "0fce86703bcfd133": {
+      "path": "samples\\archived-approvals\\thelender\\unknown-loan_LLC_Borrowing_Certificate_Single_Member_-_Blank_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": null,
+      "subject": "Conditional Approval: Benharush/12404",
+      "from": "Taylor Colton <taylor.colton@emporiumtpo.com>",
+      "inbox": "John",
+      "msgId": "19b0aa16cbffbf9f",
+      "savedAt": "2026-06-11T00:42:21.542Z"
+    },
+    "e42300cd6a0a3453": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_Elkoubi_Initial_Approval_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "Elkoubi | 3517163 | Acra Initial Approval",
+      "from": "Jill Whipple <Jill.Whipple@acralending.com>",
+      "inbox": "John",
+      "msgId": "19b06199ca7d937a",
+      "savedAt": "2026-06-11T00:42:37.397Z"
+    },
+    "32431101b5ee25a9": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_Firstam11-5-25_updated_ssa-89_7_(1)_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "Elkoubi | 3517163 | Acra Initial Approval",
+      "from": "Jill Whipple <Jill.Whipple@acralending.com>",
+      "inbox": "John",
+      "msgId": "19b06199ca7d937a",
+      "savedAt": "2026-06-11T00:42:37.731Z"
+    },
+    "b29d179d7c42e4d8": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_Acra_HOA_Cert_with_Condo_3.0_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "Elkoubi | 3517163 | Acra Initial Approval",
+      "from": "Jill Whipple <Jill.Whipple@acralending.com>",
+      "inbox": "John",
+      "msgId": "19b06199ca7d937a",
+      "savedAt": "2026-06-11T00:42:38.215Z"
+    },
+    "797daa3ab1dcc2fb": {
+      "path": "samples\\archived-approvals\\acra\\unknown-loan_Vesting_Form_Cond_16007_2026-06-11.pdf",
+      "lender": "acra",
+      "loan": null,
+      "subject": "Elkoubi | 3517163 | Acra Initial Approval",
+      "from": "Jill Whipple <Jill.Whipple@acralending.com>",
+      "inbox": "John",
+      "msgId": "19b06199ca7d937a",
+      "savedAt": "2026-06-11T00:42:38.920Z"
+    },
+    "f6ab9759f799d9ef": {
+      "path": "samples\\archived-approvals\\thelender\\110100030426_Loan_Decision_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": "110100030426",
+      "subject": "Loan number 110100030426 -  Ifrah , Philip N approval has been updated",
+      "from": "No Reply <noreply@thelender.com>",
+      "inbox": "Christy",
+      "msgId": "19e984f54abae5df",
+      "savedAt": "2026-06-11T00:43:15.432Z"
+    },
+    "445bcaeae9e82e49": {
+      "path": "samples\\archived-approvals\\thelender\\110100030426_Loan_Decision_2026-06-11_1.pdf",
+      "lender": "thelender",
+      "loan": "110100030426",
+      "subject": "Loan number 110100030426 -  Ifrah , Philip N has received a Final Approval",
+      "from": "No Reply <noreply@thelender.com>",
+      "inbox": "Christy",
+      "msgId": "19e984ec9a4c2bc0",
+      "savedAt": "2026-06-11T00:43:15.776Z"
+    },
+    "988d7ee37ca5743d": {
+      "path": "samples\\archived-approvals\\other\\110100030426_VOE_Email_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "110100030426",
+      "subject": "Re: Loan number 110100030426 -  Ifrah , Philip N approval has been updated",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "Christy",
+      "msgId": "19e8a6a237769b7a",
+      "savedAt": "2026-06-11T00:43:31.808Z"
+    },
+    "a745c1e1604d449f": {
+      "path": "samples\\archived-approvals\\other\\110100030426_Phil_Mortgage._-_VOE_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "110100030426",
+      "subject": "Re: Loan number 110100030426 -  Ifrah , Philip N approval has been updated",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "Christy",
+      "msgId": "19e8a6a237769b7a",
+      "savedAt": "2026-06-11T00:43:32.039Z"
+    },
+    "636dafd427d6477b": {
+      "path": "samples\\archived-approvals\\other\\110100030426_add_2_com_-_signed_(1)_(1)_2026-06-11.pdf",
+      "lender": "other",
+      "loan": "110100030426",
+      "subject": "Re: Loan number 110100030426 -  Ifrah , Philip N approval has been updated",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "Christy",
+      "msgId": "19e8a6a237769b7a",
+      "savedAt": "2026-06-11T00:43:32.277Z"
+    },
+    "f6a6ccf6b6f71996": {
+      "path": "samples\\archived-approvals\\thelender\\110100030426_Loan_Decision_2026-06-11_2.pdf",
+      "lender": "thelender",
+      "loan": "110100030426",
+      "subject": "Loan number 110100030426 -  Ifrah , Philip N approval has been updated",
+      "from": "No Reply <noreply@thelender.com>",
+      "inbox": "Christy",
+      "msgId": "19e8a598dd93d326",
+      "savedAt": "2026-06-11T00:43:32.637Z"
+    },
+    "dfc6f8155e5e8981": {
+      "path": "samples\\archived-approvals\\thelender\\110100030426_Loan_Decision_2026-06-11_3.pdf",
+      "lender": "thelender",
+      "loan": "110100030426",
+      "subject": "Loan number 110100030426 -  Ifrah , Philip N approval has been updated",
+      "from": "No Reply <noreply@thelender.com>",
+      "inbox": "Christy",
+      "msgId": "19e4c5e19c5800a7",
+      "savedAt": "2026-06-11T00:44:15.258Z"
+    },
+    "45ad5c7d273f6b8e": {
+      "path": "samples\\archived-approvals\\Resicentral\\unknown-loan_Atias_2026-06-11.pdf",
+      "lender": "Resicentral",
+      "loan": null,
+      "subject": "Initial Loan Approval: Atias - 50246325",
+      "from": "John Montano <jmontano@resicentral.com>",
+      "inbox": "Christy",
+      "msgId": "19e471603874ae24",
+      "savedAt": "2026-06-11T00:44:22.989Z"
+    },
+    "a525955a10d93cbb": {
+      "path": "samples\\archived-approvals\\thelender\\110100030426_Loan_Decision_2026-06-11_4.pdf",
+      "lender": "thelender",
+      "loan": "110100030426",
+      "subject": "Loan number 110100030426 -  Ifrah , Philip N approval has been updated",
+      "from": "No Reply <noreply@thelender.com>",
+      "inbox": "Christy",
+      "msgId": "19e4071cc5af8732",
+      "savedAt": "2026-06-11T00:44:34.890Z"
+    },
+    "594fbf964a123c08": {
+      "path": "samples\\archived-approvals\\amwest\\unknown-loan_ACE_Pre-Approval_2026-06-11.pdf",
+      "lender": "amwest",
+      "loan": null,
+      "subject": "ACE Pre-Approval",
+      "from": "\"AmWest Funding Corp.\" <noreply@amwestfunding.com>",
+      "inbox": "Christy",
+      "msgId": "19e21cf83e771ba9",
+      "savedAt": "2026-06-11T00:44:58.093Z"
+    },
+    "b6f1e60a85b71835": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Phil1003_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: 110100030426_Ifrah - new approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "Christy",
+      "msgId": "19e1e18b70c4bcc2",
+      "savedAt": "2026-06-11T00:45:01.292Z"
+    },
+    "6412ede0db113d52": {
+      "path": "samples\\archived-approvals\\thelender\\unknown-loan_1003_Application_Ifrah_-_LO_to_sign_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": null,
+      "subject": "110100030426_Ifrah - new approval",
+      "from": "Brittany Romaniolis <bromaniolis@thelender.com>",
+      "inbox": "Christy",
+      "msgId": "19e1cb0b5775d0aa",
+      "savedAt": "2026-06-11T00:45:07.173Z"
+    },
+    "a1e1d1e9c861f5be": {
+      "path": "samples\\archived-approvals\\thelender\\unknown-loan_CD-Doc_order_form_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": null,
+      "subject": "110100030426_Ifrah - new approval",
+      "from": "Brittany Romaniolis <bromaniolis@thelender.com>",
+      "inbox": "Christy",
+      "msgId": "19e1cb0b5775d0aa",
+      "savedAt": "2026-06-11T00:45:07.397Z"
+    },
+    "1261cbb41b5996d6": {
+      "path": "samples\\archived-approvals\\thelender\\unknown-loan_Delly_Pre-approval_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": null,
+      "subject": "Pre-approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "Christy",
+      "msgId": "19e17e78c7e75903",
+      "savedAt": "2026-06-11T00:45:14.227Z"
+    },
+    "afb71455439d8acd": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_W2-2024_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Pre-approval",
+      "from": "\"Berrios, Isaura V\" <IVBerrios@mdso.com>",
+      "inbox": "Christy",
+      "msgId": "19d9318bf216545c",
+      "savedAt": "2026-06-11T00:46:37.760Z"
+    },
+    "bd287a03a72b2c21": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_W2-2025_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Pre-approval",
+      "from": "\"Berrios, Isaura V\" <IVBerrios@mdso.com>",
+      "inbox": "Christy",
+      "msgId": "19d9318bf216545c",
+      "savedAt": "2026-06-11T00:46:38.103Z"
+    },
+    "558c62b5127d5515": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_W2-2025v2_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Pre-approval",
+      "from": "\"Berrios, Isaura V\" <IVBerrios@mdso.com>",
+      "inbox": "Christy",
+      "msgId": "19d9318bf216545c",
+      "savedAt": "2026-06-11T00:46:38.462Z"
+    },
+    "30d32c9a7a0668b9": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_paystub_04.17.26_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Pre-approval",
+      "from": "\"Berrios, Isaura V\" <IVBerrios@mdso.com>",
+      "inbox": "Christy",
+      "msgId": "19d9318bf216545c",
+      "savedAt": "2026-06-11T00:46:38.676Z"
+    },
+    "b5976226d4642271": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_paystub_04.03.26_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Pre-approval",
+      "from": "\"Berrios, Isaura V\" <IVBerrios@mdso.com>",
+      "inbox": "Christy",
+      "msgId": "19d9318bf216545c",
+      "savedAt": "2026-06-11T00:46:38.886Z"
+    },
+    "eb6e42c6afead070": {
+      "path": "samples\\archived-approvals\\UWM\\unknown-loan_Final_Approval_2026-06-11.pdf",
+      "lender": "UWM",
+      "loan": null,
+      "subject": "Final Approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "Christy",
+      "msgId": "19c494db209ffb46",
+      "savedAt": "2026-06-11T00:50:43.597Z"
+    },
+    "693c7116d77b48ca": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_517_approval_Mirka_&_Devin_Young02032026145623_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Fw: Colonnade SW approval",
+      "from": "\"madyoung usmcyoungs.com\" <madyoung@usmcyoungs.com>",
+      "inbox": "Christy",
+      "msgId": "19c25b1d7e9321a8",
+      "savedAt": "2026-06-11T00:51:04.230Z"
+    },
+    "cd6d58686cb828da": {
+      "path": "samples\\archived-approvals\\other\\unknown-loan_Loan_Estimate_-_Young_2026-06-11.pdf",
+      "lender": "other",
+      "loan": null,
+      "subject": "Re: Young Pre-approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "Christy",
+      "msgId": "19be1d45a4ba0c7b",
+      "savedAt": "2026-06-11T00:51:46.610Z"
+    },
+    "6c0d9cb6499307a2": {
+      "path": "samples\\archived-approvals\\thelender\\unknown-loan_Young_Pre-approval_2026-06-11.pdf",
+      "lender": "thelender",
+      "loan": null,
+      "subject": "Young Pre-approval",
+      "from": "Christina Garboza <cgarboza@libertygroupfunding.com>",
+      "inbox": "Christy",
+      "msgId": "19bd779f2a0a654f",
+      "savedAt": "2026-06-11T00:51:52.203Z"
+    }
+  },
+  "stats": {
+    "acra": 35,
+    "newrez": 4,
+    "other": 105,
+    "Resicentral": 7,
+    "newfi": 16,
+    "thelender": 25,
+    "UWM": 3,
+    "amwest": 1
+  }
+}

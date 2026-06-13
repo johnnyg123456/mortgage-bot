@@ -1,10 +1,14 @@
 require('dotenv').config();
+const fs = require('fs');
 const express = require('express');
 const path = require('path');
 
 const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Persistent Gmail scan state (Render / local)
+fs.mkdirSync(path.join(__dirname, 'data'), { recursive: true });
 
 // Health check
 app.get('/', (req, res) => {
@@ -16,6 +20,8 @@ app.get('/health', (req, res) => {
     status: 'ok',
     service: 'Mortgage Bot',
     version: '1.0.0',
+    runtime: process.env.RENDER ? 'render' : (process.env.VERCEL ? 'vercel' : 'local'),
+    validator: process.env.VALIDATOR_ENABLED === 'true',
     timestamp: new Date().toISOString(),
     endpoints: [
       'POST /api/arive-webhook',

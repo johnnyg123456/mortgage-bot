@@ -3,6 +3,11 @@ const fs   = require('fs');
 const path = require('path');
 const { getClients }  = require('../lib/gmail-client');
 const { classify, isUwmLoanSubject } = require('../lib/email-classifier');
+const {
+  isNewrezApprovalEmail,
+  extractApprovalPdfUrl,
+  downloadApprovalPdf
+} = require('../lib/newrez-client');
 
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const MAX_MESSAGES_PER_INBOX = 2;
@@ -10,10 +15,17 @@ const SCAN_TIMEZONE = process.env.GMAIL_SCAN_TIMEZONE || 'America/New_York';
 const PROCESSED_LABEL = process.env.GMAIL_PROCESSED_LABEL || 'mortgage-bot-processed';
 const labelIdCache = {};
 
-// Vercel serverless: only /tmp is writable; fall back to local path for dev
-const STATE_FILE = process.env.VERCEL
-  ? '/tmp/.gmail-state.json'
-  : path.join(__dirname, '..', '.gmail-state.json');
+// Writable state path: Vercel uses /tmp; Render/local use ./data
+const STATE_FILE = process.env.GMAIL_STATE_FILE
+  || (process.env.VERCEL
+    ? '/tmp/.gmail-state.json'
+    : path.join(__dirname, '..', 'data', '.gmail-state.json'));
+
+function ensureStateDir() {
+  try {
+    fs.mkdirSync(path.dirname(STATE_FILE), { recursive: true });
+  } catch { /* ignore */ }
+}
 
 function log(inbox, msgId, classification, action) {
   console.log(JSON.stringify({
@@ -27,6 +39,7 @@ function loadState() {
 }
 
 function saveState(state) {
+  ensureStateDir();
   fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
 }
 
@@ -181,7 +194,7 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats) {
   const internalDate = Number(full.data.internalDate);
 
   // PDF approval letters with UWM subject pattern: always process if in today's inbox
-  const bypassCutoff = hasPDF && isUwmLoanSubject(subject);
+  const bypassCutoff = (hasPDF && isUwmLoanSubject(subject)) || isNewrezApprovalEmail(from, subject);
   if (internalDate < cutoffMs && !bypassCutoff) {
     log(inboxLabel, msg.id, null, 'skipped-before-cutoff');
     stats.skippedCutoff++;
@@ -206,6 +219,20 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats) {
       const pdfPart = findPdfPart(payload);
       if (pdfPart?.body?.attachmentId) {
         pdfBuffer = await getAttachmentData(gmail, msg.id, pdfPart.body.attachmentId);
+      }
+    }
+    if (!pdfBuffer && isNewrezApprovalEmail(from, subject)) {
+      const html = extractPart(payload, 'text/html');
+      const url  = extractApprovalPdfUrl(html, body, subject);
+      if (url) {
+        try {
+          pdfBuffer = await downloadApprovalPdf(url);
+          log(inboxLabel, msg.id, classification, `newrez-pdf-downloaded:${url.slice(0, 80)}`);
+        } catch (err) {
+          log(inboxLabel, msg.id, classification, `newrez-pdf-error:${err.message}`);
+        }
+      } else {
+        log(inboxLabel, msg.id, classification, 'newrez-pdf-link-not-found');
       }
     }
     await conditionParser.process({
@@ -322,9 +349,13 @@ function scheduleBackgroundScan(req) {
 }
 
 module.exports = async (req, res) => {
-  // cron-job.org times out at 30s; scans can take ~60s. Reply immediately unless
-  // ?wait=true (manual debugging). Add ?wait=true in browser to see full results.
-  if (req.query?.wait === 'true') {
+  // Render / explicit sync: wait for full scan (validator can take several minutes).
+  // Vercel / cron-job.org: reply fast unless ?wait=true (background via waitUntil).
+  const syncScan = req.query?.wait === 'true'
+    || process.env.GMAIL_SCAN_SYNC === 'true'
+    || process.env.RENDER === 'true';
+
+  if (syncScan) {
     const payload = await runScan(req);
     return res.status(200).json(payload);
   }
@@ -332,7 +363,7 @@ module.exports = async (req, res) => {
   scheduleBackgroundScan(req);
   return res.status(202).json({
     ok: true,
-    message: 'Scan started — check Vercel logs for results',
+    message: 'Scan started — check server logs for results',
     ts: new Date().toISOString()
   });
 };
