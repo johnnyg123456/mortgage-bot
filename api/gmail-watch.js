@@ -10,7 +10,7 @@ const {
 } = require('../lib/newrez-client');
 
 const DRY_RUN = process.env.DRY_RUN === 'true';
-const MAX_MESSAGES_PER_INBOX = 2;
+const MAX_MESSAGES_PER_INBOX = Number(process.env.GMAIL_MAX_MESSAGES_PER_INBOX) || 10;
 const SCAN_TIMEZONE = process.env.GMAIL_SCAN_TIMEZONE || 'America/New_York';
 const PROCESSED_LABEL = process.env.GMAIL_PROCESSED_LABEL || 'mortgage-bot-processed';
 const labelIdCache = {};

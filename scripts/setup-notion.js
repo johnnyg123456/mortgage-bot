@@ -39,7 +39,7 @@ async function setupLoansDb() {
     title: [{ type: 'text', text: { content: 'Active Loans' } }],
     properties: {
       'Borrower Name': { title: {} },
-      'Loan ID':       { rich_text: {} },
+      'Loan Number': { rich_text: {} },
       'Status': sel([
         'LOAN_SETUP','DISCLOSURE_SENT','UNDERWRITING_SUBMITTED',
         'APPROVED_WITH_CONDITIONS','RE_SUBMITTAL','CLEAR_TO_CLOSE',

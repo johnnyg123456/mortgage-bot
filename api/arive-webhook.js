@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { queryDatabase, createPage, updatePage, archivePage } = require('../lib/notion-client');
+const { LOAN_NUMBER_PROPERTY } = require('../lib/notion-schema');
 
 const LOANS_DB      = process.env.NOTION_LOANS_DB_ID;
 const CONDITIONS_DB = process.env.NOTION_CONDITIONS_DB_ID;
@@ -133,12 +134,12 @@ function extractLoName(body) {
 async function findExistingLoan(loanId, borrowerName) {
   if (loanId) {
     const r = await queryDatabase(LOANS_DB, {
-      property: 'Loan ID', rich_text: { equals: loanId }
+      property: LOAN_NUMBER_PROPERTY, rich_text: { equals: loanId }
     });
     if (r.results.length) return r.results[0];
 
     const r2 = await queryDatabase(LOANS_DB, {
-      property: 'Loan ID', rich_text: { contains: loanId }
+      property: LOAN_NUMBER_PROPERTY, rich_text: { contains: loanId }
     });
     if (r2.results.length) return r2.results[0];
   }
@@ -165,7 +166,7 @@ async function findConditionsByLoan(loanPageId) {
 async function createLoan({ loanId, borrowerName, loName, status }) {
   await createPage(LOANS_DB, {
     'Borrower Name': { title:     [{ text: { content: borrowerName || 'Unknown' } }] },
-    'Loan ID':       { rich_text: [{ text: { content: loanId } }] },
+    [LOAN_NUMBER_PROPERTY]: { rich_text: [{ text: { content: loanId } }] },
     'LO Name':       { rich_text: [{ text: { content: loName ?? '' } }] },
     'Status':        { select:    { name: status } },
     'Date Added':    { date:      { start: new Date().toISOString().split('T')[0] } }
