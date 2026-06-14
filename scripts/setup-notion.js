@@ -60,6 +60,8 @@ async function setupConditionsDb() {
     properties: {
       'Condition':  { title: {} },
       'Status':     sel(['Open', 'In Progress', 'Cleared']),
+      'Borrower Last Name': { rich_text: {} },
+      'Lender':     { rich_text: {} },
       'Loan': {
         relation: {
           database_id: LOANS_DB,
