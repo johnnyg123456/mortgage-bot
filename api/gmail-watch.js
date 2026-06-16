@@ -4,6 +4,11 @@ const path = require('path');
 const { getClients }  = require('../lib/gmail-client');
 const { classify, isUwmLoanSubject } = require('../lib/email-classifier');
 const { isApprovalPdfFilename } = require('../lib/approval-letter');
+const {
+  isNewrezApprovalEmail,
+  extractApprovalPdfUrl,
+  downloadApprovalPdf
+} = require('../lib/newrez-client');
 
 const DRY_RUN = process.env.DRY_RUN === 'true';
 const MAX_MESSAGES_PER_INBOX = Number(process.env.GMAIL_MAX_MESSAGES_PER_INBOX) || 25;
