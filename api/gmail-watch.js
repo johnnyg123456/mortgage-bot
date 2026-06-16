@@ -16,6 +16,7 @@ const MAX_TOTAL_PER_INBOX_PER_SCAN = Number(process.env.GMAIL_MAX_TOTAL_PER_INBO
 const SCAN_TIMEZONE = process.env.GMAIL_SCAN_TIMEZONE || 'America/New_York';
 const PROCESSED_LABEL = process.env.GMAIL_PROCESSED_LABEL || 'mortgage-bot-processed';
 const PRESERVE_UNREAD = process.env.GMAIL_PRESERVE_UNREAD !== 'false';
+const APPROVAL_PDF_ONLY = process.env.APPROVAL_PDF_ONLY !== 'false';
 const labelIdCache = {};
 
 // Writable state path: Vercel uses /tmp; Render/local use ./data
@@ -294,14 +295,14 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats, processed
     stats.dispatched++;
     return { status: 'dispatched', wasUnread };
 
-  } else if (classification === 'PRE_APPROVAL') {
+  } else if (!APPROVAL_PDF_ONLY && classification === 'PRE_APPROVAL') {
     const preApproval = require('../lib/pre-approval-handler');
     await preApproval.process({ subject, from, body });
     log(inboxLabel, msg.id, classification, 'dispatched to pre-approval-handler');
     stats.dispatched++;
     return { status: 'dispatched', wasUnread };
 
-  } else if (classification === 'LENDER_REQUEST') {
+  } else if (!APPROVAL_PDF_ONLY && classification === 'LENDER_REQUEST') {
     const lenderRequest = require('../lib/lender-request-handler');
     await lenderRequest.process({ subject, from, body });
     log(inboxLabel, msg.id, classification, 'dispatched to lender-request-handler');
@@ -309,7 +310,11 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats, processed
     return { status: 'dispatched', wasUnread };
 
   } else {
-    log(inboxLabel, msg.id, classification, 'skipped');
+    if (classification !== 'OTHER' && classification !== 'IGNORE' && classification !== 'TASK') {
+      log(inboxLabel, msg.id, classification, 'skipped-approval-pdf-only');
+    } else {
+      log(inboxLabel, msg.id, classification, 'skipped');
+    }
     stats.skippedOther++;
     return { status: 'skipped-other', wasUnread };
   }
@@ -402,7 +407,8 @@ async function runScan(req) {
       maxPerInboxPerScan: MAX_TOTAL_PER_INBOX_PER_SCAN,
       inboxes: Object.keys(clients).length,
       processedLabel: PROCESSED_LABEL,
-      preserveUnread: PRESERVE_UNREAD
+      preserveUnread: PRESERVE_UNREAD,
+      approvalPdfOnly: APPROVAL_PDF_ONLY
     },
     results,
     stats

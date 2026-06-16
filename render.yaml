@@ -26,6 +26,8 @@ services:
         value: "25"
       - key: GMAIL_MAX_TOTAL_PER_INBOX_PER_SCAN
         value: "50"
+      - key: APPROVAL_PDF_ONLY
+        value: "true"
       - key: NOTION_TOKEN
         sync: false
       - key: NOTION_LOANS_DB_ID
