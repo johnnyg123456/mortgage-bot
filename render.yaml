@@ -23,7 +23,9 @@ services:
       - key: GMAIL_SCAN_TIMEZONE
         value: America/New_York
       - key: GMAIL_MAX_MESSAGES_PER_INBOX
-        value: "10"
+        value: "25"
+      - key: GMAIL_MAX_TOTAL_PER_INBOX_PER_SCAN
+        value: "50"
       - key: NOTION_TOKEN
         sync: false
       - key: NOTION_LOANS_DB_ID

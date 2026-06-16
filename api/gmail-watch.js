@@ -3,16 +3,14 @@ const fs   = require('fs');
 const path = require('path');
 const { getClients }  = require('../lib/gmail-client');
 const { classify, isUwmLoanSubject } = require('../lib/email-classifier');
-const {
-  isNewrezApprovalEmail,
-  extractApprovalPdfUrl,
-  downloadApprovalPdf
-} = require('../lib/newrez-client');
+const { isApprovalPdfFilename } = require('../lib/approval-letter');
 
 const DRY_RUN = process.env.DRY_RUN === 'true';
-const MAX_MESSAGES_PER_INBOX = Number(process.env.GMAIL_MAX_MESSAGES_PER_INBOX) || 10;
+const MAX_MESSAGES_PER_INBOX = Number(process.env.GMAIL_MAX_MESSAGES_PER_INBOX) || 25;
+const MAX_TOTAL_PER_INBOX_PER_SCAN = Number(process.env.GMAIL_MAX_TOTAL_PER_INBOX_PER_SCAN) || 50;
 const SCAN_TIMEZONE = process.env.GMAIL_SCAN_TIMEZONE || 'America/New_York';
 const PROCESSED_LABEL = process.env.GMAIL_PROCESSED_LABEL || 'mortgage-bot-processed';
+const PRESERVE_UNREAD = process.env.GMAIL_PRESERVE_UNREAD !== 'false';
 const labelIdCache = {};
 
 // Writable state path: Vercel uses /tmp; Render/local use ./data
@@ -90,6 +88,9 @@ async function getProcessedLabelId(gmail, inboxLabel) {
   const existing = (data.labels ?? []).find(l => l.name === PROCESSED_LABEL);
   if (existing) {
     labelIdCache[inboxLabel] = existing.id;
+    if (existing.labelListVisibility === 'labelHide') {
+      await ensureProcessedLabelVisible(gmail, inboxLabel, existing.id);
+    }
     return existing.id;
   }
 
@@ -97,7 +98,7 @@ async function getProcessedLabelId(gmail, inboxLabel) {
     userId: 'me',
     requestBody: {
       name: PROCESSED_LABEL,
-      labelListVisibility: 'labelHide',
+      labelListVisibility: 'labelShow',
       messageListVisibility: 'show'
     }
   });
@@ -105,12 +106,26 @@ async function getProcessedLabelId(gmail, inboxLabel) {
   return created.data.id;
 }
 
-async function markMessageProcessed(gmail, inboxLabel, msgId) {
+async function ensureProcessedLabelVisible(gmail, inboxLabel, labelId) {
+  await gmail.users.labels.update({
+    userId: 'me',
+    id: labelId,
+    requestBody: {
+      labelListVisibility: 'labelShow',
+      messageListVisibility: 'show'
+    }
+  }).catch(() => { /* non-fatal */ });
+}
+
+async function markMessageProcessed(gmail, inboxLabel, msgId, { wasUnread } = {}) {
   const labelId = await getProcessedLabelId(gmail, inboxLabel);
+  const addLabelIds = [labelId];
+  // Gmail API reads don't mark read, but re-apply UNREAD if anything cleared it during processing
+  if (PRESERVE_UNREAD && wasUnread) addLabelIds.push('UNREAD');
   await gmail.users.messages.modify({
     userId: 'me',
     id: msgId,
-    requestBody: { addLabelIds: [labelId] }
+    requestBody: { addLabelIds }
   });
 }
 
@@ -161,19 +176,37 @@ function hasPdf(payload) {
   return search(payload);
 }
 
-function findPdfPart(payload) {
-  function search(part) {
-    if (
-      part.mimeType === 'application/pdf' ||
-      (part.filename ?? '').toLowerCase().endsWith('.pdf')
-    ) return part;
-    for (const child of part.parts ?? []) {
-      const found = search(child);
-      if (found) return found;
-    }
-    return null;
+function findAllPdfParts(payload, out = []) {
+  if (
+    payload.mimeType === 'application/pdf' ||
+    (payload.filename ?? '').toLowerCase().endsWith('.pdf')
+  ) {
+    out.push(payload);
   }
-  return search(payload);
+  for (const child of payload.parts ?? []) findAllPdfParts(child, out);
+  return out;
+}
+
+function findApprovalPdfPart(payload) {
+  const pdfs = findAllPdfParts(payload);
+  if (!pdfs.length) return null;
+
+  const ranked = pdfs
+    .map(part => {
+      const filename = part.filename ?? '';
+      let score = 0;
+      if (isApprovalPdfFilename(filename)) score += 10;
+      if (/approvalletter|conditional.?approval|loan.?approval/i.test(filename)) score += 5;
+      if (/1003|1008|closing|settlement|alta|disclosure|invoice|wire|deed|note/i.test(filename)) score -= 5;
+      return { part, score };
+    })
+    .sort((a, b) => b.score - a.score);
+
+  return ranked[0].part;
+}
+
+function findPdfPart(payload) {
+  return findApprovalPdfPart(payload) ?? findAllPdfParts(payload)[0] ?? null;
 }
 
 async function getAttachmentData(gmail, msgId, attachmentId) {
@@ -183,14 +216,25 @@ async function getAttachmentData(gmail, msgId, attachmentId) {
   return Buffer.from(res.data.data, 'base64');
 }
 
-async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats) {
+async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats, processedLabelId) {
   const full = await gmail.users.messages.get({ userId: 'me', id: msg.id, format: 'full' });
   const { payload } = full.data;
+  const labelIds = full.data.labelIds ?? [];
+  const wasUnread = labelIds.includes('UNREAD');
+
+  if (processedLabelId && labelIds.includes(processedLabelId)) {
+    log(inboxLabel, msg.id, null, 'already-processed');
+    stats.alreadyProcessed = (stats.alreadyProcessed ?? 0) + 1;
+    return { status: 'already-processed', wasUnread };
+  }
+
   const headers = payload.headers ?? [];
   const subject = getHeader(headers, 'subject');
   const from    = getHeader(headers, 'from');
   const body    = extractBody(payload);
   const hasPDF  = hasPdf(payload);
+  const pdfPart = hasPDF ? findPdfPart(payload) : null;
+  const pdfFilename = pdfPart?.filename ?? '';
   const internalDate = Number(full.data.internalDate);
 
   // PDF approval letters with UWM subject pattern: always process if in today's inbox
@@ -198,10 +242,10 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats) {
   if (internalDate < cutoffMs && !bypassCutoff) {
     log(inboxLabel, msg.id, null, 'skipped-before-cutoff');
     stats.skippedCutoff++;
-    return 'skipped-cutoff';
+    return { status: 'skipped-cutoff', wasUnread };
   }
 
-  const classification = classify(subject, body, { hasPdf: hasPDF, from });
+  const classification = classify(subject, body, { hasPdf: hasPDF, from, pdfFilename });
   log(inboxLabel, msg.id, classification, 'classified');
   stats.messages.push({ inbox: inboxLabel, msgId: msg.id, subject, classification, hasPdf: hasPDF });
 
@@ -209,17 +253,14 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats) {
   if (DRY_RUN) {
     log(inboxLabel, msg.id, classification, 'dry-run-skipped');
     stats.dryRun++;
-    return 'dry-run';
+    return { status: 'dry-run', wasUnread };
   }
 
   if (classification === 'CONDITION_LIST') {
     const conditionParser = require('../lib/condition-parser');
     let pdfBuffer = null;
-    if (hasPDF) {
-      const pdfPart = findPdfPart(payload);
-      if (pdfPart?.body?.attachmentId) {
-        pdfBuffer = await getAttachmentData(gmail, msg.id, pdfPart.body.attachmentId);
-      }
+    if (pdfPart?.body?.attachmentId) {
+      pdfBuffer = await getAttachmentData(gmail, msg.id, pdfPart.body.attachmentId);
     }
     if (!pdfBuffer && isNewrezApprovalEmail(from, subject)) {
       const html = extractPart(payload, 'text/html');
@@ -235,59 +276,82 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats) {
         log(inboxLabel, msg.id, classification, 'newrez-pdf-link-not-found');
       }
     }
+    if (!pdfBuffer) {
+      log(inboxLabel, msg.id, classification, 'skipped-no-approval-pdf');
+      stats.skippedNoApprovalPdf = (stats.skippedNoApprovalPdf ?? 0) + 1;
+      return { status: 'skipped-no-approval-pdf', wasUnread };
+    }
     await conditionParser.process({
       subject, from, body, pdfBuffer, msgId: msg.id,
       gmail, threadId: full.data.threadId, inboxLabel
     });
     log(inboxLabel, msg.id, classification, 'dispatched to condition-parser');
     stats.dispatched++;
-    return 'dispatched';
+    return { status: 'dispatched', wasUnread };
 
   } else if (classification === 'PRE_APPROVAL') {
     const preApproval = require('../lib/pre-approval-handler');
     await preApproval.process({ subject, from, body });
     log(inboxLabel, msg.id, classification, 'dispatched to pre-approval-handler');
     stats.dispatched++;
-    return 'dispatched';
+    return { status: 'dispatched', wasUnread };
 
   } else if (classification === 'LENDER_REQUEST') {
     const lenderRequest = require('../lib/lender-request-handler');
     await lenderRequest.process({ subject, from, body });
     log(inboxLabel, msg.id, classification, 'dispatched to lender-request-handler');
     stats.dispatched++;
-    return 'dispatched';
+    return { status: 'dispatched', wasUnread };
 
   } else {
     log(inboxLabel, msg.id, classification, 'skipped');
     stats.skippedOther++;
-    return 'skipped-other';
+    return { status: 'skipped-other', wasUnread };
   }
 }
 
 async function watchInbox(account, state, cutoffMs, stats) {
   const { label, gmail } = account;
+  const processedLabelId = await getProcessedLabelId(gmail, label);
+  const query = buildInboxQuery(cutoffMs);
+  let pageToken;
+  let processedThisScan = 0;
 
-  const listRes = await gmail.users.messages.list({
-    userId:   'me',
-    maxResults: MAX_MESSAGES_PER_INBOX,
-    q: buildInboxQuery(cutoffMs)
-  });
+  while (processedThisScan < MAX_TOTAL_PER_INBOX_PER_SCAN) {
+    const batchSize = Math.min(
+      MAX_MESSAGES_PER_INBOX,
+      MAX_TOTAL_PER_INBOX_PER_SCAN - processedThisScan
+    );
+    const listRes = await gmail.users.messages.list({
+      userId: 'me',
+      maxResults: batchSize,
+      pageToken,
+      q: query
+    });
 
-  const messages = listRes.data.messages ?? [];
-  if (!messages.length) {
-    log(label, null, null, 'no new messages');
-    return state;
+    const messages = listRes.data.messages ?? [];
+    if (!messages.length) {
+      if (processedThisScan === 0) log(label, null, null, 'no new messages');
+      break;
+    }
+
+    // Gmail returns newest first; processed emails drop out via -label:mortgage-bot-processed
+    for (const msg of messages) {
+      const result = await processMessage(gmail, label, msg, cutoffMs, stats, processedLabelId);
+      // Label in Gmail is the source of truth — excluded from future scans via -label:mortgage-bot-processed
+      if (result.status !== 'skipped-cutoff' && result.status !== 'already-processed') {
+        await markMessageProcessed(gmail, label, msg.id, { wasUnread: result.wasUnread });
+      }
+      processedThisScan += 1;
+      if (processedThisScan >= MAX_TOTAL_PER_INBOX_PER_SCAN) break;
+    }
+
+    pageToken = listRes.data.nextPageToken;
+    if (!pageToken) break;
   }
 
-  // Gmail returns newest first — process only the 2 most recent unlabeled emails
-  const toProcess = messages.slice(0, MAX_MESSAGES_PER_INBOX);
-
-  for (const msg of toProcess) {
-    const result = await processMessage(gmail, label, msg, cutoffMs, stats);
-    // Gmail label persists across Vercel restarts; skipped-cutoff emails retry next scan
-    if (result && result !== 'skipped-cutoff') {
-      await markMessageProcessed(gmail, label, msg.id);
-    }
+  if (processedThisScan > 0) {
+    log(label, null, null, `processed-${processedThisScan}-this-scan`);
   }
 
   return state;
@@ -328,6 +392,13 @@ async function runScan(req) {
     ts: new Date().toISOString(),
     scanCutoff: new Date(cutoffMs).toISOString(),
     scanQuery: buildInboxQuery(cutoffMs),
+    limits: {
+      perBatch: MAX_MESSAGES_PER_INBOX,
+      maxPerInboxPerScan: MAX_TOTAL_PER_INBOX_PER_SCAN,
+      inboxes: Object.keys(clients).length,
+      processedLabel: PROCESSED_LABEL,
+      preserveUnread: PRESERVE_UNREAD
+    },
     results,
     stats
   };
