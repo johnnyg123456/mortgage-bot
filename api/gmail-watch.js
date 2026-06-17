@@ -2,7 +2,7 @@ require('dotenv').config();
 const fs   = require('fs');
 const path = require('path');
 const { getClients }  = require('../lib/gmail-client');
-const { classify, isUwmLoanSubject } = require('../lib/email-classifier');
+const { classify, isUwmLoanSubject, isBrokerApprovalBundle } = require('../lib/email-classifier');
 const { isApprovalPdfFilename } = require('../lib/approval-letter');
 const {
   isNewrezApprovalEmail,
@@ -194,8 +194,13 @@ function findAllPdfParts(payload, out = []) {
 }
 
 function findApprovalPdfPart(payload) {
+  const parts = listApprovalPdfParts(payload);
+  return parts[0] ?? null;
+}
+
+function listApprovalPdfParts(payload, subject = '', from = '') {
   const pdfs = findAllPdfParts(payload);
-  if (!pdfs.length) return null;
+  if (!pdfs.length) return [];
 
   const ranked = pdfs
     .map(part => {
@@ -208,7 +213,15 @@ function findApprovalPdfPart(payload) {
     })
     .sort((a, b) => b.score - a.score);
 
-  return ranked[0].part;
+  const positives = ranked.filter(r => r.score > 0).map(r => r.part);
+  if (positives.length) return positives;
+
+  const names = pdfs.map(p => p.filename ?? '');
+  if (isBrokerApprovalBundle(subject, '', { hasPdf: true, from, pdfFilenames: names })) {
+    return pdfs.filter(p => !/1003|1008|closing|settlement|alta|disclosure|invoice|wire|deed|note|intro/i.test(p.filename ?? ''));
+  }
+
+  return ranked[0]?.part ? [ranked[0].part] : [];
 }
 
 function findPdfPart(payload) {
@@ -239,8 +252,10 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats, processed
   const from    = getHeader(headers, 'from');
   const body    = extractBody(payload);
   const hasPDF  = hasPdf(payload);
-  const pdfPart = hasPDF ? findPdfPart(payload) : null;
-  const pdfFilename = pdfPart?.filename ?? '';
+  const pdfFilenames = findAllPdfParts(payload).map(p => p.filename ?? '');
+  const pdfParts = hasPDF ? listApprovalPdfParts(payload, subject, from) : [];
+  const pdfPart = pdfParts[0] ?? null;
+  const pdfFilename = pdfPart?.filename ?? pdfFilenames[0] ?? '';
   const internalDate = Number(full.data.internalDate);
 
   // PDF approval letters with UWM subject pattern: always process if in today's inbox
@@ -251,7 +266,7 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats, processed
     return { status: 'skipped-cutoff', wasUnread };
   }
 
-  const classification = classify(subject, body, { hasPdf: hasPDF, from, pdfFilename });
+  const classification = classify(subject, body, { hasPdf: hasPDF, from, pdfFilename, pdfFilenames });
   log(inboxLabel, msg.id, classification, 'classified');
   stats.messages.push({ inbox: inboxLabel, msgId: msg.id, subject, classification, hasPdf: hasPDF });
 
@@ -264,11 +279,10 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats, processed
 
   if (classification === 'CONDITION_LIST') {
     const conditionParser = require('../lib/condition-parser');
-    let pdfBuffer = null;
-    if (pdfPart?.body?.attachmentId) {
-      pdfBuffer = await getAttachmentData(gmail, msg.id, pdfPart.body.attachmentId);
-    }
-    if (!pdfBuffer && isNewrezApprovalEmail(from, subject)) {
+    const partsToProcess = pdfParts.length ? pdfParts : [];
+
+    if (!partsToProcess.length && isNewrezApprovalEmail(from, subject)) {
+      let pdfBuffer = null;
       const html = extractPart(payload, 'text/html');
       const url  = extractApprovalPdfUrl(html, body, subject);
       if (url) {
@@ -281,18 +295,38 @@ async function processMessage(gmail, inboxLabel, msg, cutoffMs, stats, processed
       } else {
         log(inboxLabel, msg.id, classification, 'newrez-pdf-link-not-found');
       }
+      if (pdfBuffer) {
+        await conditionParser.process({
+          subject, from, body, pdfBuffer, msgId: msg.id,
+          gmail, threadId: full.data.threadId, inboxLabel
+        });
+        log(inboxLabel, msg.id, classification, 'dispatched to condition-parser');
+        stats.dispatched++;
+        return { status: 'dispatched', wasUnread };
+      }
     }
-    if (!pdfBuffer) {
+
+    if (!partsToProcess.length) {
       log(inboxLabel, msg.id, classification, 'skipped-no-approval-pdf');
       stats.skippedNoApprovalPdf = (stats.skippedNoApprovalPdf ?? 0) + 1;
       return { status: 'skipped-no-approval-pdf', wasUnread };
     }
-    await conditionParser.process({
-      subject, from, body, pdfBuffer, msgId: msg.id,
-      gmail, threadId: full.data.threadId, inboxLabel
-    });
-    log(inboxLabel, msg.id, classification, 'dispatched to condition-parser');
-    stats.dispatched++;
+
+    for (const part of partsToProcess) {
+      let pdfBuffer = null;
+      if (part?.body?.attachmentId) {
+        pdfBuffer = await getAttachmentData(gmail, msg.id, part.body.attachmentId);
+      }
+      if (!pdfBuffer) continue;
+      const partFilename = part.filename ?? '';
+      await conditionParser.process({
+        subject, from, body, pdfBuffer, msgId: msg.id,
+        gmail, threadId: full.data.threadId, inboxLabel,
+        attachmentFilename: partFilename
+      });
+      log(inboxLabel, msg.id, classification, `dispatched to condition-parser:${partFilename || 'pdf'}`);
+      stats.dispatched++;
+    }
     return { status: 'dispatched', wasUnread };
 
   } else if (!APPROVAL_PDF_ONLY && classification === 'PRE_APPROVAL') {
